@@ -14,6 +14,8 @@
 // require jquery_ujs
 // require_tree .
 //= require pontus/js/jquery
+//= require vendor/underscore
+//= require vendor/backbone
 //= require pontus/js/bootstrap.min
 //= require pontus/js/jquery-ui-1.8.16.custom.min
 //= require pontus/js/jquery.data-table
@@ -64,3 +66,5 @@
 //= require pontus/js/pontus.script
 //= require pontus/js/respond.min
 //= require pontus/js/ios-orientationchange-fix
+//= require app
+//= require router
