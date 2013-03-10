@@ -8,6 +8,16 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
+ * require_self
+ * require_tree .
+ *= require pontus/css/bootstrap
+ *= require pontus/css/styles
+ *= require pontus/css/prettify
+ *= require pontus/css/aristo-ui
+ *= require pontus/css/fullcalendar
+ *= require pontus/css/elfinder
+ *= require pontus/css/jquery.jqplot
+ *= require pontus/css/responsive-tables
+ *= require pontus/css/bootstrap-responsive
+ *= require pontus/css/themes
  */
