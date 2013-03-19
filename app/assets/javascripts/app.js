@@ -15,6 +15,8 @@ var App = {
     App.currentRecipes = new App.collections.Recipes();
     App.currentRecipesView = new App.views.Recipes({collection : App.currentRecipes});
 
+    App.currentRuleoptions = new App.models.RuleOptions();
+
     // start router
     Backbone.history.start({silent : false});
 

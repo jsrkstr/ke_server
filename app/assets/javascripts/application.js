@@ -71,8 +71,14 @@
 //= require app
 //= require router
 //= require models/recipe
+//= require models/rule_group
+//= require models/rule
+//= require models/rule_options
 //= require collections/recipes
+//= require collections/rule_groups
 //= require views/recipe
 //= require views/recipes
 //= require views/edit_recipe
+//= require views/rule_groups
+//= require views/rule_group
 //= require views/rule

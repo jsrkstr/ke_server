@@ -13,18 +13,29 @@ App.views.EditRecipe = Backbone.View.extend({
 	initialize : function(args){
 		this.on("reset",this.render,this);
 
-		// load user events / props / operators
+		// the one and only rule group
+		// collection
+		this.ruleGroups = new App.collections.RuleGroups();
+
+
+		// model that contains a collection
+		// var ruleGroup = new App.models.RuleGroup();
+
+		// this.ruleGroups.add(ruleGroup);
 
 	},
 
 
 	render : function(){
-		// hack
-		this.model = new App.models.Recipe();
-		//hack
+
 		this.$el.html(this.template(this.model.toJSON()));
-		var view = new App.views.Rule({ model : this.model });
+		
+		this.ruleGroups.reset(this.model.get("segment").rules);
+		this.ruleGroups.defaults.operator = this.model.get("segment").operator;
+
+		var view = new App.views.RuleGroups({ collection : this.ruleGroups });
 		this.$(".user-segment-form .widget-block").html(view.render().el);
+		
 		return this;
 	}
 

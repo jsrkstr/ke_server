@@ -812,10 +812,16 @@ $(function () {
             {{ } }}
         </ul>
 
-        {{ if(filters[0]){ }}
+        {{ var curationFilter = _.where(filters, {type : "curation"})[0]; }}
+        {{ var primaryFilter = _.where(filters, {type : "primary"})[0]; }}
+
+        {{ if(primaryFilter){ }}
         <ul class="primary-filter elem-list pull-left">
             <li>
-                where
+                <select related-attr="filter-selector">
+                    <option value="1">where</option>
+                    <option value="2">for</option>
+                </select>
             </li>
             <li>
                 <select related-attr="primary-operand-1">
@@ -823,7 +829,7 @@ $(function () {
                     {{ var properties = _.where(events, { id : event_id})[0].properties; }}
 
                     {{ for (var i = 0; i < properties.length; i++) { }}
-                        <option value={{= properties[i] }} {{= filters[0].operands[0].value == properties[i] ? 'selected="selected"' : '' }}>
+                        <option value={{= properties[i] }} {{= primaryFilter.operands[0].value == properties[i] ? 'selected="selected"' : '' }}>
                             {{= properties[i] }}
                         </option>
                     {{ } }}
@@ -832,49 +838,50 @@ $(function () {
             <li class="operator">
                 <select related-attr="operator_id">
                     {{ for (var i = 0; i < operators.length; i++) { }}
-                        <option value={{= operators[i].id }} {{= filters[0].operator_id == operators[i].id ? 'selected="selected"' : '' }}>
+                        <option value={{= operators[i].id }} {{= primaryFilter.operator_id == operators[i].id ? 'selected="selected"' : '' }}>
                             {{= operators[i].name }}
                         </option>
                     {{ } }}
                 </select>
             </li>
             <li>
-                <input  related-attr="primary-operand-2" class="input-mini" value={{= filters[0].operands[1].value }}>
+                <input type="text" related-attr="primary-operand-2" class="input-mini" value={{= primaryFilter.operands[1].value }}>
             </li>
+            {{ if(!curationFilter){ }}
             <li>
                 <div class="expander">
                     &gt;&gt;&gt;&gt;
                 </div>
             </li>
+            {{ } }}
         </ul>
         {{ } }}
 
-        {{ if(filters[1]){ }}
-        <ul class="curation-filter elem-list">
+        {{ if(curationFilter){ }}
+        <ul class="curation-filter elem-list pull-left">
             <li>
-                for
+                <select related-attr="filter-selector">
+                    <option value="2">for</option>
+                    <option value="1">where</option>
+                </select>
             </li>
             <li>
                 <select related-attr="curation_operator_id">
                 {{ for (var i = 0; i < operators.length; i++) { }}
-                    <option value={{= operators[i].id }} {{= filters[1].operator_id == operators[i].id ? 'selected="selected"' : '' }}>
+                    <option value={{= operators[i].id }} {{= curationFilter.operator_id == operators[i].id ? 'selected="selected"' : '' }}>
                         {{= operators[i].name }}
                     </option>
                 {{ } }}
+                </select>
             </li>
             <li>
-                <input related-attr="curation-operand-1" class="input-mini" value={{= filters[1].operands[0].value }}>
+                <input type="text" related-attr="curation-operand-1" class="input-mini" value={{= curationFilter.operands[0].value }}>
             </li>
             <li>
                 <select related-attr="curation-operand-1-type">
                     <option value="false">times</option>
-                    <option value="true" {{= filters[1].operands[0].is_percentage == "true" ? 'selected="selected"' : '' }}>% of times</option>
+                    <option value="true" {{= curationFilter.operands[0].is_percentage == "true" ? 'selected="selected"' : '' }}>% of times</option>
                 </select>
-            </li>
-            <li>
-                <div class="expander">
-                    &gt;&gt;&gt;&gt;
-                </div>
             </li>
         </ul>
         {{ } }}
@@ -923,7 +930,7 @@ $(function () {
                 </select>
             </li>
             <li>
-                <input related-attr="primary-operand-1" class="input-mini" value={{= filters[0].operands[0].value }}>
+                <input type="text" related-attr="primary-operand-1" class="input-mini" value={{= filters[0].operands[0].value }}>
             </li>
         </ul>
         {{ } }}
@@ -933,6 +940,36 @@ $(function () {
         </div>
     {{ } }}
 
+</script>
+
+<script type="text/template" id="rule-groups-templ">
+    <div>
+        <label>Group By</label>
+        <select class="group-by-main">
+            <option value="and">AND</option>
+            <option value="or" {{= operator == "or" ? 'selected="selected"' : '' }}>OR</option>
+        </select>
+    </div>
+    <div class="all-rule-groups">
+    </div>
+    <div class="add-rule-group">
+        +++
+    </div>
+</script>
+
+<script type="text/template" id="rule-group-templ">
+    <div>
+        <label>Group By</label>
+        <select class="group-by-secondary">
+            <option value="and">AND</option>
+            <option value="or" {{= operator == "or" ? 'selected="selected"' : '' }}>OR</option>
+        </select>
+    </div>
+    <div class="all-rules">
+    </div>
+    <div class="add-rule">
+        +++
+    </div>
 </script>
 
 <!-- backbone templates -->

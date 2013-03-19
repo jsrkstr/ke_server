@@ -21,12 +21,12 @@ App.views.Rule = Backbone.View.extend({
 
 
 	render : function(){
-		var events = [{id : 1,name : "Liked",properties : ["sport", "created_at"]},	{id : 2,name : "Searched",properties : ["source", "destination", "date", "passengers", "created_at"]}, {id : 3,name : "Fooed",properties : ["source", "destination", "date", "passengers", "created_at"]}]
-		var attributes = [{id : 1,name : "username"},{id : 2,name : "age"},{id : 3,	name : "last_seen_at"}];
-		var operators = [{"id":1,"name":"equals"},{"id":2,"name":"does not equal"},{"id":3,"name":"less than"},{"id":4,"name":"greater than"},{"id":5,"name":"contains"},{"id":6,"name":"does not contain"},{"id":7,"name":"is set"},{"id":8,"name":"is not set"},{"id":9,"name":"times","curation":true},{"id":10,"name":"% of times","curation":true}];
+		// load options if not loaded
+		if(!App.currentRuleoptions.get("events"))
+			App.currentRuleoptions.fetch({async : false});
 
 		var data = this.model.toJSON();
-		_.extend(data, {events : events, attributes : attributes, operators : operators});
+		_.extend(data, App.currentRuleoptions.toJSON());
 		this.$el.html(this.template(data));
 		return this;
 	},
@@ -83,6 +83,16 @@ App.views.Rule = Backbone.View.extend({
 				this.model.set(data);
 				this.model.trigger("change");
 				break;
+			case "filter-selector" :
+				this.model.set({ filters : []}, {silent : true});
+
+				if(value == "2"){
+					// add curation filter,  remove primary filter
+					this.addCurationFilter();
+				} else {
+					this.addPrimaryFilter();
+				}
+				break;
 		}
 		
 	},
@@ -91,7 +101,7 @@ App.views.Rule = Backbone.View.extend({
 	// operator + 2 operands
 	addPrimaryFilter : function(){
 		this.model.set({ filters : [
-			{"operator_id":1,"operands":[{value: "", is_percentage : false},{value: "", is_percentage : false}] }
+			{ type: "primary", "operator_id":1,"operands":[{value: "", is_percentage : false},{value: "", is_percentage : false}] }
 		]});
 	},
 
@@ -99,7 +109,7 @@ App.views.Rule = Backbone.View.extend({
 	// operator + 1 operand
 	addCurationFilter : function(){
 		var filters = this.model.get("filters");
-		filters[1] = {"operator_id":1,"operands":[{value: "", is_percentage : false}] };
+		filters.push({ type: "curation", "operator_id":1,"operands":[{value: "", is_percentage : false}] });
 		this.model.set({ filters : filters});
 		this.model.trigger("change");
 	},
