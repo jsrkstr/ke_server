@@ -10,13 +10,10 @@ var App = {
   //The main function for the js
   init : function() {
 
-    // Template Default setting change link - http://stackoverflow.com/questions/7514922/rails-with-underscore-js-templates
-    _.templateSettings = {
-      interpolate: /\{\{\=(.+?)\}\}/g,
-      evaluate: /\{\{(.+?)\}\}/g
-    };
+    App.currentRouter = new App.routers.Router();
 
-    App.router = new App.routers.Router();
+    App.currentRecipes = new App.collections.Recipes();
+    App.currentRecipesView = new App.views.Recipes({collection : App.currentRecipes});
 
     // start router
     Backbone.history.start({silent : false});
@@ -56,4 +53,10 @@ var App = {
     $.unblockUI();
   }
 
+};
+
+// Template Default setting change link - http://stackoverflow.com/questions/7514922/rails-with-underscore-js-templates
+_.templateSettings = {
+  interpolate: /\{\{\=(.+?)\}\}/g,
+  evaluate: /\{\{(.+?)\}\}/g
 };

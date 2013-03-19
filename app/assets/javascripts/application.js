@@ -66,5 +66,13 @@
 //= require pontus/js/pontus.script
 //= require pontus/js/respond.min
 //= require pontus/js/ios-orientationchange-fix
+// App libs
+//= require backbone_sync
 //= require app
 //= require router
+//= require models/recipe
+//= require collections/recipes
+//= require views/recipe
+//= require views/recipes
+//= require views/edit_recipe
+//= require views/rule

@@ -8,7 +8,7 @@
 	<meta name="author" content="Westilian: Kamrujaman Shohel">
 
 	<%= stylesheet_link_tag    "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
+    
     <%= csrf_meta_tags %>
 
 
@@ -603,13 +603,13 @@ $(function () {
 <div class="left-bar">
 	<div class="side-nav">
 		<ul>
-			<li><a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="leftnav-icon computer_imac_blk"></span><span class="leftnav-label">Dashbard</span></a>
+			<li><a data-toggle="dropdown" class="dropdown-toggle" href="#/dashboard"><span class="leftnav-icon computer_imac_blk"></span><span class="leftnav-label">Dashbard</span></a>
 			</li>
 			<!-- <li><a href="#"><span class="leftnav-icon folder_blk"></span><span class="leftnav-label">Medias</span></a></li>
 			<li><a href="#"><span class="leftnav-icon chart_8_blk"></span><span class="leftnav-label">Statistics</span></a></li>
 			<li><a href="#"><span class="leftnav-icon money_blk"></span><span class="leftnav-label">Orders</span></a></li>
 			<li><a href="#"><span class="leftnav-icon help_blk"></span><span class="leftnav-label">Support</span></a></li> -->
-			<li><a href="#"><span class="leftnav-icon cog_3_blk"></span><span class="leftnav-label">Recipies</span></a></li>
+			<li><a href="#/recipes"><span class="leftnav-icon cog_3_blk"></span><span class="leftnav-label">Recipies</span></a></li>
 		</ul>
 	</div>
 </div>
@@ -619,12 +619,9 @@ $(function () {
 			<li><span class="active-page-icon computer_imac_blk"></span><span>Dashboard</span></li>
 		</ul>
 	</div>
-	<div class="container-fluid">
-		<div class="alert alert-block no-radius fade in">
-			<button type="button" class="close" data-dismiss="alert"><span class="mini-icon cross_c"></span></button>
-			<h4>Warning!</h4>
-			 Best check yo self, you're not...
-		</div>
+
+    <!-- dashboard container -->
+	<div class="container-fluid dashboard-screen">
 		<div class="row-fluid">
 			<div class="span12">
 				<div class="box-widget">
@@ -688,912 +685,262 @@ $(function () {
 				</div>
 			</div>
 		</div>
-		<div class="row-fluid">
-			<div class="span6">
-				<div class="box-widget">
-					<div class="widget-head clearfix">
-						<span class="h-icon"><i class="gray-icons globe"></i></span>
-						<h4>Geo Map</h4>
-					</div>
-					<div class="widget-container">
-						<div class=" widget-block">
-							<div id="chart_div_geo">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="span6">
-				<div class="box-widget">
-					<div class="widget-head clearfix">
-						<span class="h-icon"><i class="gray-icons globe"></i></span>
-						<h4>Geo Map</h4>
-					</div>
-					<div class="widget-container">
-						<div class=" widget-block">
-							<div id="chart_div_geo1">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="board-stats clearfix">
-				<div class="span3">
-					<div class="mini-stat-block clearfix">
-						<div class="info-stat">
-							<ul>
-								<li class="mini-stat-title">Weekly Visitors</li>
-								<li class="stat-count">25346<span class="increase"><i class="up"><img src="images/up.png" width="18" height="11" alt="up"></i> 10%</span></li>
-							</ul>
-						</div>
-						<div class="mini-chart line-chart">
-							 200,300,500,200,300,500,1000
-						</div>
-					</div>
-				</div>
-				<div class="span3">
-					<div class="mini-stat-block clearfix">
-						<div class="info-stat">
-							<ul>
-								<li class="mini-stat-title">Weekly Visitors</li>
-								<li class="stat-count">25346<span class="decrease"><i class="down"><img src="images/down.png" width="18" height="11" alt="down"></i> 10%</span></li>
-							</ul>
-						</div>
-						<div class="mini-chart pie-chart">
-							 1,2,3
-						</div>
-					</div>
-				</div>
-				<div class="span3">
-					<div class="mini-stat-block clearfix">
-						<div class="info-stat">
-							<ul>
-								<li class="mini-stat-title">Weekly Visitors</li>
-								<li class="stat-count">25346<span class="increase"><i class="up"><img src="images/up.png" width="18" height="11" alt="up"></i> 10%</span></li>
-							</ul>
-						</div>
-						<div class="mini-chart bar-chart">
-							 5,6,7,2,0,-4,-2,4
-						</div>
-					</div>
-				</div>
-				<div class="span3">
-					<div class="mini-stat-block clearfix">
-						<div class="info-stat">
-							<ul>
-								<li class="mini-stat-title">Weekly Visitors</li>
-								<li class="stat-count">25346<span class="increase"><i class="up"><img src="images/up.png" width="18" height="11" alt="up"></i> 10%</span></li>
-							</ul>
-						</div>
-						<div class="mini-chart composite-line">
-							 8,4,0,0,0,0,1,4,4,10,10,10,10,0,0,0,4,6,5,9,10
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="shortcut-panel">
-				<div class="span2">
-					<div class="large-btn top-icon">
-						<a href="#"><span class="icon magenta"><i class="white-icons users_2"></i></span><span class="btn-elem first-element">Users</span><span class="btn-elem second-element">10254</span></a>
-					</div>
-				</div>
-				<div class="span2">
-					<div class="large-btn top-icon">
-						<a href="#"><span class="icon blue"><i class="white-icons megaphone"></i></span><span class="btn-elem first-element">Support Tickets</span><span class="btn-elem second-element">35684</span></a>
-					</div>
-				</div>
-				<div class="span2">
-					<div class="large-btn top-icon">
-						<a href="#"><span class="icon orange"><i class="white-icons shopping_cart_3"></i></span><span class="btn-elem first-element">Orders</span><span class="btn-elem second-element">98674</span></a>
-					</div>
-				</div>
-				<div class="span2">
-					<div class="large-btn top-icon">
-						<a href="#"><span class="icon green"><i class="white-icons documents"></i></span><span class="btn-elem first-element">Post </span><span class="btn-elem second-element">124865</span></a>
-					</div>
-				</div>
-				<div class="span2">
-					<div class="large-btn top-icon">
-						<a href="#"><span class="icon gray"><i class="white-icons file_cabinet"></i></span><span class="btn-elem first-element">Documnets</span><span class="btn-elem second-element">987646</span></a>
-					</div>
-				</div>
-				<div class="span2">
-					<div class="large-btn top-icon">
-						<a href="#"><span class="icon brown"><i class="white-icons speech_bubbles_2"></i></span><span class="btn-elem first-element">Comments</span><span class="btn-elem second-element">65843</span></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class=" shortcut-panel">
-				<ul class="btn-circle clearfix">
-					<li class="blue"><a href="#" title="All User"><i class="gray-icons users_2"></i><span class="notify-tiptop tips-green">10</span></a></li>
-					<li class="green"><span class="notify-tiptop">100</span><a href="#" title="Comments"><i class="gray-icons speech_bubbles"></i></a></li>
-					<li class="magenta"><a href="#" title="Messages"><i class="gray-icons box_incoming"></i></a></li>
-					<li class="orange"><a href="#" title="Documents"><i class="gray-icons documents"></i></a></li>
-					<li class="brown"><span class="notify-tiptop tips-blue">100</span><a href="#" title="Recent Orders"><i class="gray-icons shopping_cart_3"></i></a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="shortcut-panel">
-				<div class="span2">
-					<div class="large-btn-block">
-						<span class="notify-tiptop">100</span><a href="#"><span class="icon computer_imac_blk"></span><span class="link-btn">Dashboard</span></a>
-					</div>
-				</div>
-				<div class="span2">
-					<div class="large-btn-block">
-						<a href="#"><span class="icon graph_blk"></span><span class="link-btn">Statistics</span></a>
-					</div>
-				</div>
-				<div class="span2">
-					<div class="large-btn-block">
-						<span class="notify-tiptop tips-blue">140</span><a href="#"><span class="icon megaphone_blk"></span><span class="link-btn">Support Ticket</span></a>
-					</div>
-				</div>
-				<div class="span2">
-					<div class="large-btn-block">
-						<span class="notify-tiptop tips-green">80</span><a href="#"><span class="icon money_blk"></span><span class="link-btn">Recent Orders</span></a>
-					</div>
-				</div>
-				<div class="span2">
-					<div class="large-btn-block">
-						<a href="#"><span class="icon truck_blk"></span><span class="link-btn">Order Shipped</span></a>
-					</div>
-				</div>
-				<div class="span2">
-					<div class="large-btn-block">
-						<a href="#"><span class="icon settings_blk"></span><span class="link-btn">Settings</span></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span12">
-				<div class="page-header">
-					<h2>Tab Widgets <small>top tab, left tab, right tab, bottom tab, tab with icon and without icon.</small></h2>
-				</div>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span12">
-				<ul class="main-tab nav nav-tabs" id="myTab">
-					<li class="active"><a href="#home"><i class="gray-icons home"></i> Home</a></li>
-					<li><a href="#profile"><i class="gray-icons user"></i> Profile</a></li>
-				</ul>
-				<div class="tab-content">
-					<div class="tab-pane active" id="home">
-						<h4 class="pane-header">Morbi pharetra volutpat auctor.</h4>
-						<p>
-							 Sed pharetra mattis nunc eget rhoncus. Sed non ligula ut est commodo pharetra. Integer commodo dolor in dolor rutrum tincidunt. Mauris egestas gravida metus, et dignissim turpis laoreet ut. Aliquam cursus, lorem ut tristique tempus, turpis massa ullamcorper lectus, non ornare massa nisi in neque. Mauris sit amet quam non diam aliquam tempus a a nulla. Fusce libero leo, adipiscing in varius eget, dignissim at dui.
-						</p>
-					</div>
-					<div class="tab-pane" id="profile">
-						<h4 class="pane-header">Morbi pharetra volutpat auctor.</h4>
-						<p>
-							 Donec eu risus odio, in mattis ligula. Quisque luctus bibendum enim eget mollis. Donec aliquet, erat non accumsan eleifend, ipsum mi hendrerit dui, in pharetra nibh diam at libero. Praesent tempor, risus ut pulvinar venenatis, massa metus volutpat diam, sed volutpat nisl dui ut felis. Praesent sagittis gravida ipsum, eu vehicula orci fringilla vel. Nulla vel metus nunc, tincidunt accumsan dui. Cras vestibulum, turpis nec porttitor convallis, turpis felis rutrum mi, sed suscipit elit velit in tellus. Nunc at erat vehicula leo commodo consequat. Maecenas at erat sed elit eleifend luctus sed cursus orci. Vivamus eu tellus dui, non blandit justo. Duis leo ante, egestas posuere interdum nec, interdum sit amet neque. Donec id elit ut nunc consequat porta ut in leo. In elementum nibh condimentum urna sagittis vel varius ligula posuere. Vestibulum lectus felis, aliquam at convallis nec, tempus ac leo. Aenean faucibus rutrum euismod.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span6">
-				<div class="box-widget tab-widget">
-					<div class="widget-head clearfix">
-						<ul class="nav nav-tabs pull-right">
-							<li class="active"><a href="#tab1" data-toggle="tab"><i class="gray-icons headphones "></i> Active Tab</a></li>
-							<li><a href="#tab2" data-toggle="tab"><i class="gray-icons speech_bubbles_2 "></i> Inactive Tab</a></li>
-						</ul>
-					</div>
-					<div class="widget-container">
-						<div class="tab-content">
-							<div class="tab-pane active" id="tab1">
-								<div class="block-content">
-									<p>
-										 I'm in Section 1.
-									</p>
-								</div>
-							</div>
-							<div class="tab-pane" id="tab2">
-								<div class="block-content">
-									<p>
-										 Howdy, I'm in Section 2.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="span6">
-				<div class="box-widget tab-widget">
-					<div class="widget-container">
-						<div class="tab-content">
-							<div class="tab-pane active" id="tab3">
-								<div class="block-content">
-									<p>
-										 I'm in Section 1.
-									</p>
-								</div>
-							</div>
-							<div class="tab-pane" id="tab4">
-								<div class="block-content">
-									<p>
-										 Howdy, I'm in Section 2.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="widget-head tab-bottom clearfix">
-						<ul class="nav nav-tabs pull-right">
-							<li class="active"><a href="#tab3" data-toggle="tab"><i class="gray-icons money"></i> Tab 1 </a></li>
-							<li><a href="#tab4" data-toggle="tab"><i class="gray-icons piggy_bank"></i> Tab 2</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span6">
-				<div class="box-widget tab-widget clearfix">
-					<div class="widget-head tab-left clearfix">
-						<ul class="nav nav-tabs">
-							<li class="active"><a href="#tab10" data-toggle="tab"><i class="gray-icons folder"></i> Tab 1</a></li>
-							<li><a href="#tab11" data-toggle="tab"><i class="gray-icons cloud_upload"></i> Tab 2</a></li>
-						</ul>
-					</div>
-					<div class="widget-container">
-						<div class="tab-content">
-							<div class="tab-pane active" id="tab10">
-								<div class="block-content">
-									<p>
-										 I'm in Section 1.
-									</p>
-								</div>
-							</div>
-							<div class="tab-pane" id="tab11">
-								<div class="block-content">
-									<p>
-										 Howdy, I'm in Section 2.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="span6">
-				<div class="box-widget tab-widget clearfix">
-					<div class="widget-head tab-right clearfix">
-						<ul class="nav nav-tabs">
-							<li class="active"><a href="#tab13" data-toggle="tab"><i class="gray-icons truck"></i> Section 1</a></li>
-							<li><a href="#tab14" data-toggle="tab"><i class="gray-icons chemical"></i> Section 2</a></li>
-						</ul>
-					</div>
-					<div class="widget-container">
-						<div class="tab-content">
-							<div class="tab-pane active" id="tab13">
-								<div class="block-content">
-									<p>
-										 I'm in Section 1.
-									</p>
-								</div>
-							</div>
-							<div class="tab-pane" id="tab14">
-								<div class="block-content">
-									<p>
-										 Howdy, I'm in Section 2.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span12">
-				<div class="intro-block">
-					<div class="element-header">
-						<h4>Table - 02 <small> boxy bordered table with data stats and dropdown menu.</small></h4>
-					</div>
-					<p>
-						Estibulum nibh lorem, blandit non pretium sit amet, tempus eget ipsum. Quisque auctor pretium turpis nec elementum. Quisque egestas lectus nec eros ornare et eleifend dui adipiscing. Vestibulum non ipsum libero. Curabitur eu ligula dolor. Nulla sed rutrum tortor. Ut metus risus, consequat nec laoreet vel, congue eget odio. Fusce eu massa neque, posuere tempor ligula. Nam ac commodo libero. Vivamus quis posuere elit.
-					</p>
-				</div>
-				<div class="data-meta clearfix">
-					<ul>
-						<li><a href="#"><i class="gray-icons file_cabinet"></i> View All (30)</a></li>
-						<li><a href="#"><i class="gray-icons vault documents"></i> Publish (20)</a></li>
-						<li><a href="#"><i class="gray-icons vault trashcan"></i> Trush (10)</a></li>
-					</ul>
-				</div>
-				<div class="box-widget">
-					<div class="widget-head clearfix">
-						<div class="search-bar pull-left">
-							<form action="#" method="get">
-								<ul>
-									<li>
-									<select name="" class="search-select">
-										<option value="Select">Select</option>
-										<option value="Select 1">Select 1</option>
-									</select>
-									</li>
-									<li><button class="btn" type="submit">
-									Button </button></li>
-								</ul>
-							</form>
-						</div>
-						<div class="widget-action dropdown">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="gray-icons cog_2"></i><b class="caret"></b></a>
-							<ul class="dropdown-menu pull-right">
-								<li><a href="#"><i class=" ledgray-icons add_co"></i> Add Row</a></li>
-								<li><a href="#"><i class="ledgray-icons disconnect_co"></i> Suspend</a></li>
-								<li><a href="#"><i class="ledgray-icons accept_co"></i> Approved</a></li>
-								<li><a href="#"><i class="ledgray-icons cross_co"></i> Delete</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="widget-container">
-						<table class="table table-striped table-well responsive">
-						<thead>
-						<tr>
-							<th>
-								 OrderDate
-							</th>
-							<th>
-								 Region
-							</th>
-							<th>
-								 Rep
-							</th>
-							<th>
-								 Item
-							</th>
-							<th>
-								 Units
-							</th>
-							<th>
-								 Unit Cost
-							</th>
-							<th>
-								 Total
-							</th>
-						</tr>
-						</thead>
-						<tbody>
-						<tr>
-							<td>
-								 1/6/10
-							</td>
-							<td>
-								 Quebec
-							</td>
-							<td>
-								 Jones
-							</td>
-							<td>
-								 Pencil
-							</td>
-							<td>
-								 95
-							</td>
-							<td>
-								 1.99
-							</td>
-							<td>
-								 189.05
-							</td>
-						</tr>
-						<tr>
-							<td>
-								 1/23/10
-							</td>
-							<td>
-								 Ontario
-							</td>
-							<td>
-								 Kivell
-							</td>
-							<td>
-								 Binder
-							</td>
-							<td>
-								 50
-							</td>
-							<td>
-								 19.99
-							</td>
-							<td>
-								 999.50
-							</td>
-						</tr>
-						<tr>
-							<td>
-								 2/9/10
-							</td>
-							<td>
-								 Ontario
-							</td>
-							<td>
-								 Jardine
-							</td>
-							<td>
-								 Pencil
-							</td>
-							<td>
-								 36
-							</td>
-							<td>
-								 4.99
-							</td>
-							<td>
-								 179.64
-							</td>
-						</tr>
-						</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span6">
-				<div class="box-widget">
-					<div class="widget-head clearfix">
-						<span class="h-icon"><i class="gray-icons list"></i></span>
-						<h4>Buttons</h4>
-					</div>
-					<div class="widget-container">
-						<div class="widget-block">
-							<ul class="elem-list">
-								<li>
-								<a class="btn">.btn</a></li>
-								<li>
-								<a class="btn btn-primary">.btn-primary</a></li>
-								<li>
-								<a class="btn btn-info">.btn-info</a></li>
-								<li>
-								<a class="btn btn-success">.btn-success</a></li>
-								<li>
-								<a class="btn btn-warning">.btn-warning</a></li>
-								<li>
-								<a class="btn btn-danger">.btn-dangery</a></li>
-								<li>
-								<a class="btn btn-inverse">.btn-inverse</a></li>
-								<li>
-								<a class="btn btn-extend">.btn-extend</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="span6">
-				<div class="box-widget">
-					<div class="widget-head clearfix">
-						<span class="h-icon"><i class="gray-icons list"></i></span>
-						<h4>Buttons with icon</h4>
-					</div>
-					<div class="widget-container">
-						<div class="widget-block">
-							<ul class="elem-list">
-								<li>
-								<a class="btn btn-icon"><i class="gray-icons cog_3"></i> .btn .btn-icon</a></li>
-								<li>
-								<a class="btn btn-primary btn-icon"><i class="white-icons cup"></i> .btn-primary</a></li>
-								<li>
-								<a class="btn btn-info btn-icon"><i class="white-icons box_outgoing"></i> .btn-info</a></li>
-								<li>
-								<a class="btn btn-success btn-icon btn-icon"><i class="white-icons speech_bubbles_2"></i> .btn-success</a></li>
-								<li>
-								<a class="btn btn-warning btn-icon"><i class="white-icons truck"></i> .btn-warning</a></li>
-								<li>
-								<a class="btn btn-danger btn-icon"><i class="white-icons alarm_bell"></i> .btn-dangery</a></li>
-								<li>
-								<a class="btn btn-inverse btn-icon"><i class="white-icons mail"></i> .btn-inverse</a></li>
-								<li>
-								<a class="btn btn-extend btn-icon"><i class="white-icons note_book"></i> .btn-extend</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span6">
-				<div class="box-widget">
-					<div class="widget-head clearfix">
-						<span class="h-icon"><i class="gray-icons list"></i></span>
-						<h4>Buttons Large</h4>
-					</div>
-					<div class="widget-container">
-						<div class="widget-block">
-							<ul class="elem-list">
-								<li>
-								<a class="btn btn-large">.btn</a></li>
-								<li>
-								<a class="btn btn-primary btn-large">.btn-primary</a></li>
-								<li>
-								<a class="btn btn-info btn-large">.btn-info</a></li>
-								<li>
-								<a class="btn btn-success btn-large">.btn-success</a></li>
-								<li>
-								<a class="btn btn-warning btn-large">.btn-warning</a></li>
-								<li>
-								<a class="btn btn-danger btn-large">.btn-dangery</a></li>
-								<li>
-								<a class="btn btn-inverse btn-large">.btn-inverse</a></li>
-								<li>
-								<a class="btn btn-extend btn-large">.btn-extend</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="span6">
-				<div class="box-widget">
-					<div class="widget-head clearfix">
-						<span class="h-icon"><i class="gray-icons list"></i></span>
-						<h4>Buttons large with icon</h4>
-					</div>
-					<div class="widget-container">
-						<div class="widget-block">
-							<ul class="elem-list">
-								<li>
-								<a class="btn btn-icon btn-large"><i class="gray-icons cog_3"></i> .btn .btn-icon</a></li>
-								<li>
-								<a class="btn btn-primary btn-icon btn-large"><i class="white-icons cup"></i> .btn-primary</a></li>
-								<li>
-								<a class="btn btn-info btn-icon btn-large"><i class="white-icons box_outgoing"></i> .btn-info</a></li>
-								<li>
-								<a class="btn btn-success btn-icon btn-icon btn-large"><i class="white-icons speech_bubbles_2"></i> .btn-success</a></li>
-								<li>
-								<a class="btn btn-warning btn-icon btn-large"><i class="white-icons truck"></i> .btn-warning</a></li>
-								<li>
-								<a class="btn btn-danger btn-icon btn-large"><i class="white-icons alarm_bell"></i> .btn-dangery</a></li>
-								<li>
-								<a class="btn btn-inverse btn-icon btn-large"><i class="white-icons mail"></i> .btn-inverse</a></li>
-								<li>
-								<a class="btn btn-extend btn-icon btn-large"><i class="white-icons note_book"></i> .btn-extend</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span6">
-				<div class="box-widget">
-					<div class="widget-head clearfix">
-						<span class="h-icon"><i class="gray-icons list"></i></span>
-						<h4>Buttons Group</h4>
-					</div>
-					<div class="widget-container">
-						<div class="widget-block">
-							<div class="btn-toolbar">
-								<div class="btn-group">
-									<button class="btn"><i class="ledcolor-icons font_co"></i></button>
-									<button class="btn"><i class="ledcolor-icons bin_closed_co"></i></button>
-									<button class="btn"><i class="ledcolor-icons add_co "></i></button>
-									<button class="btn"><i class="ledcolor-icons hammer_screwdriver_co"></i></button>
-								</div>
-								<div class="btn-group">
-									<button class="btn"><i class="ledcolor-icons padding_right_co"></i></button>
-									<button class="btn"><i class="ledcolor-icons spellcheck_co"></i></button>
-									<button class="btn"><i class="ledcolor-icons padding_left_co"></i></button>
-								</div>
-								<div class="btn-group">
-									<button class="btn"><i class="ledcolor-icons printer_co"></i></button>
-								</div>
-							</div>
-							<div class="btn-group ">
-								<button class="btn"><i class="ledcolor-icons pencil_co"></i></button>
-								<button class="btn"><i class="ledcolor-icons text_align_justify_co"></i></button>
-								<button class="btn"><i class="ledcolor-icons tag_co"></i></button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="span6">
-				<div class="box-widget">
-					<div class="widget-head clearfix">
-						<span class="h-icon"><i class="gray-icons list"></i></span>
-						<h4>Dropdown Buttons </h4>
-					</div>
-					<div class="widget-container">
-						<div class="widget-block">
-							<div class="btn-toolbar">
-								<ul class="elem-list">
-									<li>
-									<div class="btn-group">
-										<button data-toggle="dropdown" class="btn dropdown-toggle">Action <span class="caret"></span></button>
-										<ul class="dropdown-menu">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another action</a></li>
-											<li><a href="#">Something else here</a></li>
-											<li class="divider"></li>
-											<li><a href="#">Separated link</a></li>
-										</ul>
-									</div>
-									</li>
-									<!-- /btn-group -->
-									<li>
-									<div class="btn-group">
-										<button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Action <span class="caret"></span></button>
-										<ul class="dropdown-menu">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another action</a></li>
-											<li><a href="#">Something else here</a></li>
-											<li class="divider"></li>
-											<li><a href="#">Separated link</a></li>
-										</ul>
-									</div>
-									</li>
-									<!-- /btn-group -->
-									<li>
-									<div class="btn-group">
-										<button data-toggle="dropdown" class="btn btn-danger dropdown-toggle">Danger <span class="caret"></span></button>
-										<ul class="dropdown-menu">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another action</a></li>
-											<li><a href="#">Something else here</a></li>
-											<li class="divider"></li>
-											<li><a href="#">Separated link</a></li>
-										</ul>
-									</div>
-									</li>
-									<!-- /btn-group -->
-									<li>
-									<div class="btn-group">
-										<button data-toggle="dropdown" class="btn btn-warning dropdown-toggle">Warning <span class="caret"></span></button>
-										<ul class="dropdown-menu">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another action</a></li>
-											<li><a href="#">Something else here</a></li>
-											<li class="divider"></li>
-											<li><a href="#">Separated link</a></li>
-										</ul>
-									</div>
-									</li>
-									<!-- /btn-group -->
-									<li>
-									<div class="btn-group">
-										<button data-toggle="dropdown" class="btn btn-success dropdown-toggle">Success <span class="caret"></span></button>
-										<ul class="dropdown-menu">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another action</a></li>
-											<li><a href="#">Something else here</a></li>
-											<li class="divider"></li>
-											<li><a href="#">Separated link</a></li>
-										</ul>
-									</div>
-									</li>
-									<!-- /btn-group -->
-									<li>
-									<div class="btn-group">
-										<button data-toggle="dropdown" class="btn btn-info dropdown-toggle">Info <span class="caret"></span></button>
-										<ul class="dropdown-menu">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another action</a></li>
-											<li><a href="#">Something else here</a></li>
-											<li class="divider"></li>
-											<li><a href="#">Separated link</a></li>
-										</ul>
-									</div>
-									</li>
-									<!-- /btn-group -->
-									<li>
-									<div class="btn-group">
-										<button data-toggle="dropdown" class="btn btn-inverse dropdown-toggle">Inverse <span class="caret"></span></button>
-										<ul class="dropdown-menu pull-right">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another action</a></li>
-											<li><a href="#">Something else here</a></li>
-											<li class="divider"></li>
-											<li><a href="#">Separated link</a></li>
-										</ul>
-									</div>
-									</li>
-									<!-- /btn-group -->
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row-fluid">
-			<div class="span6">
-				<div class="box-widget">
-					<div class="widget-head clearfix">
-						<span class="h-icon"><i class="gray-icons list"></i></span>
-						<h4>Split button dropdowns</h4>
-					</div>
-					<div class="widget-container">
-						<div class="widget-block">
-							<div class="btn-toolbar">
-								<ul class="elem-list">
-									<li>
-									<div class="btn-group">
-										<button class="btn">Action</button>
-										<button data-toggle="dropdown" class="btn dropdown-toggle"><span class="caret"></span></button>
-										<ul class="dropdown-menu">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another action</a></li>
-											<li><a href="#">Something else here</a></li>
-											<li class="divider"></li>
-											<li><a href="#">Separated link</a></li>
-										</ul>
-									</div>
-									</li>
-									<!-- /btn-group -->
-									<li>
-									<div class="btn-group">
-										<button class="btn btn-primary">Action</button>
-										<button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span></button>
-										<ul class="dropdown-menu">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another action</a></li>
-											<li><a href="#">Something else here</a></li>
-											<li class="divider"></li>
-											<li><a href="#">Separated link</a></li>
-										</ul>
-									</div>
-									</li>
-									<!-- /btn-group -->
-									<li>
-									<div class="btn-group">
-										<button class="btn btn-danger">Danger</button>
-										<button data-toggle="dropdown" class="btn btn-danger dropdown-toggle"><span class="caret"></span></button>
-										<ul class="dropdown-menu">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another action</a></li>
-											<li><a href="#">Something else here</a></li>
-											<li class="divider"></li>
-											<li><a href="#">Separated link</a></li>
-										</ul>
-									</div>
-									</li>
-									<!-- /btn-group -->
-									<li>
-									<div class="btn-group">
-										<button class="btn btn-warning">Warning</button>
-										<button data-toggle="dropdown" class="btn btn-warning dropdown-toggle"><span class="caret"></span></button>
-										<ul class="dropdown-menu">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another action</a></li>
-											<li><a href="#">Something else here</a></li>
-											<li class="divider"></li>
-											<li><a href="#">Separated link</a></li>
-										</ul>
-									</div>
-									</li>
-									<!-- /btn-group -->
-									<li>
-									<div class="btn-group">
-										<button class="btn btn-success">Success</button>
-										<button data-toggle="dropdown" class="btn btn-success dropdown-toggle"><span class="caret"></span></button>
-										<ul class="dropdown-menu">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another action</a></li>
-											<li><a href="#">Something else here</a></li>
-											<li class="divider"></li>
-											<li><a href="#">Separated link</a></li>
-										</ul>
-									</div>
-									</li>
-									<!-- /btn-group -->
-									<li>
-									<div class="btn-group">
-										<button class="btn btn-info">Info</button>
-										<button data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>
-										<ul class="dropdown-menu">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another action</a></li>
-											<li><a href="#">Something else here</a></li>
-											<li class="divider"></li>
-											<li><a href="#">Separated link</a></li>
-										</ul>
-									</div>
-									</li>
-									<!-- /btn-group -->
-									<li>
-									<div class="btn-group">
-										<button class="btn btn-inverse">Inverse</button>
-										<button data-toggle="dropdown" class="btn btn-inverse dropdown-toggle"><span class="caret"></span></button>
-										<ul class="dropdown-menu">
-											<li><a href="#">Action</a></li>
-											<li><a href="#">Another action</a></li>
-											<li><a href="#">Something else here</a></li>
-											<li class="divider"></li>
-											<li><a href="#">Separated link</a></li>
-										</ul>
-									</div>
-									</li>
-									<!-- /btn-group -->
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="span6">
-				<div class="box-widget">
-					<div class="widget-head clearfix">
-						<span class="h-icon"><i class="gray-icons list"></i></span>
-						<h4>Split button dropdowns</h4>
-					</div>
-					<div class="widget-container">
-						<div class="widget-block">
-							<ul class="elem-list">
-								<li>
-								<div class="btn-group dropdown-extend ">
-									<a href="#" class="btn btn-lbl"><i class="black-icons users"></i> User</a><a href="#" data-toggle="dropdown" class="btn btn-split dropdown-toggle"><i class="gray-icons users"></i></a>
-									<ul class="dropdown-menu ">
-										<li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
-										<li><a href="#"><i class="icon-trash"></i> Delete</a></li>
-										<li><a href="#"><i class="icon-ban-circle"></i> Ban</a></li>
-										<li class="divider"></li>
-										<li><a href="#"><i class="i"></i> Make admin</a></li>
-									</ul>
-								</div>
-								</li>
-								<li>
-								<div class="btn-group dropdown-extend ">
-									<a href="#" class="btn btn-lbl btn-large"><i class="black-icons users"></i> Large</a><a href="#" data-toggle="dropdown" class="btn btn-split btn-large dropdown-toggle"><i class="gray-icons users"></i></a>
-									<ul class="dropdown-menu ">
-										<li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
-										<li><a href="#"><i class="icon-trash"></i> Delete</a></li>
-										<li><a href="#"><i class="icon-ban-circle"></i> Ban</a></li>
-										<li class="divider"></li>
-										<li><a href="#"><i class="i"></i> Make admin</a></li>
-									</ul>
-								</div>
-								</li>
-								<li>
-								<div class="btn-group dropdown-extend ">
-									<a href="#" class="btn btn-lbl"><i class="black-icons users"></i> User</a><a href="#" data-toggle="dropdown" class="btn btn-split dropdown-toggle"><i class="gray-icons users"></i></a>
-									<ul class="dropdown-menu ">
-										<li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
-										<li><a href="#"><i class="icon-trash"></i> Delete</a></li>
-										<li><a href="#"><i class="icon-ban-circle"></i> Ban</a></li>
-										<li class="divider"></li>
-										<li><a href="#"><i class="i"></i> Make admin</a></li>
-									</ul>
-								</div>
-								</li>
-								<li class=" pull-right ">
-								<div class="btn-group dropdown-extend pull-right ">
-									<a href="#" class="btn btn-lbl btn-large"><i class="black-icons users"></i> Large Right</a><a href="#" data-toggle="dropdown" class="btn btn-split btn-large dropdown-toggle"><i class="gray-icons users"></i></a>
-									<ul class="dropdown-menu">
-										<li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
-										<li><a href="#"><i class="icon-trash"></i> Delete</a></li>
-										<li><a href="#"><i class="icon-ban-circle"></i> Ban</a></li>
-										<li class="divider"></li>
-										<li><a href="#"><i class="i"></i> Make admin</a></li>
-									</ul>
-								</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 	</div>
+    <!-- dashboard container -->
+
+    <!-- recipe home screen -->
+    <div class="container-fluid recipes-screen">
+        <div class="row-fluid">
+            <div class="span8 recipes">
+            </div>
+        </div>
+    </div>
+    <!-- recipe home screen -->
+
+
+    <!-- edit recipe screen -->
+    <div class="container-fluid edit-recipe-screen">
+        <div class="row-fluid">
+            <div class="span12 form">
+            </div>
+        </div>
+    </div>
+    <!-- edit recipe screen -->
+
 </div>
+
+
+<!-- backbone templates -->
+
+<script type="text/template" id="recipe-templ">
+<div class="box-widget">
+    <div class="widget-head clearfix">
+        <span class="h-icon"><i class="gray-icons pencil"></i></span>
+        <h4 class="pull-left">{{= name }}</h4>
+        <div class="on_off pull-right">
+            <input type="checkbox" checked="checked" id="on_off_on"/>
+        </div>
+    </div>
+    <div class="widget-container">
+        <div class="widget-block">
+            
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/template" id="edit-recipe-templ">
+<div class="box-widget">
+    <div class="widget-head clearfix">
+        <span class="h-icon"><i class="gray-icons list"></i></span>
+        <h4>{{= name }}</h4>
+        <div class="widget-action dropdown ">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="gray-icons cog_2"></i><b class="caret"></b></a>
+            <ul class="dropdown-menu pull-right">
+                <li><a href="#"><i class=" ledgray-icons add_co"></i> Add Row</a></li>
+                <li><a href="#"><i class="ledgray-icons disconnect_co"></i> Suspend</a></li>
+                <li><a href="#"><i class="ledgray-icons accept_co"></i> Approved</a></li>
+                <li><a href="#"><i class="ledgray-icons cross_co"></i> Delete</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="widget-container">
+        <div class="form-container">
+            <form class="form-well">
+                <div class="widget-well user-segment-form">
+                    <div class="widget-head clearfix">
+                        <h4><i class="ledgray-icons grid_dot_co"></i> Grid 9</h4>
+                    </div>
+                    <div class="widget-container">
+                        <div class="widget-block">
+                            <h5>Heading</h5>
+                            <p>
+                                Morbi in ligula dolor, ac faucibus odio. Maecenas vestibulum est sit amet lorem dapibus mattis. Pellentesque interdum egestas suscipit. Pellentesque sit amet ligula dui, id mollis turpis. Duis imperdiet egestas ipsum quis feugiat. Aliquam sagittis elementum mi ac viverra. Duis a nisi arcu.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-well">
+                    <div class="widget-head clearfix">
+                        <h4><i class="ledgray-icons grid_dot_co"></i> Grid 9</h4>
+                    </div>
+                    <div class="widget-container">
+                        <div class="widget-block">
+                            <h5>Heading</h5>
+                            <p>
+                                Morbi in ligula dolor, ac faucibus odio. Maecenas vestibulum est sit amet lorem dapibus mattis. Pellentesque interdum egestas suscipit. Pellentesque sit amet ligula dui, id mollis turpis. Duis imperdiet egestas ipsum quis feugiat. Aliquam sagittis elementum mi ac viverra. Duis a nisi arcu.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-extend">Save changes</button>
+                    <button type="button" class="btn btn-danger">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</script>
+
+
+<script type="text/template" id="rule-templ">
+    {{ if(selector_id == 1){  }}
+        <ul class="main-selector elem-list pull-left">
+            <li>
+                <select related-attr="selector_id">
+                    <option value="1">Did event</option>
+                    <option value="2">Has attribute</option>
+                </select>
+            </li>
+            <li>
+                <select related-attr="event_id">
+                    <option value="0">Event</option>
+                    {{ for (var i = 0; i < events.length; i++) { }}
+                        <option value={{= events[i].id }} {{= event_id == events[i].id ? 'selected="selected"' : '' }}>
+                            {{= events[i].name }}
+                        </option>
+                    {{ } }}
+                </select>
+            </li>
+            {{ if(!(event_id == 0 || filters[0])){ }}
+                <li>
+                    <div class="expander">
+                        &gt;&gt;&gt;&gt;
+                    </div>
+                </li>
+            {{ } }}
+        </ul>
+
+        {{ if(filters[0]){ }}
+        <ul class="primary-filter elem-list pull-left">
+            <li>
+                where
+            </li>
+            <li>
+                <select related-attr="primary-operand-1">
+                    <option value="0">Property</option>
+                    {{ var properties = _.where(events, { id : event_id})[0].properties; }}
+
+                    {{ for (var i = 0; i < properties.length; i++) { }}
+                        <option value={{= properties[i] }} {{= filters[0].operands[0].value == properties[i] ? 'selected="selected"' : '' }}>
+                            {{= properties[i] }}
+                        </option>
+                    {{ } }}
+                </select>
+            </li>
+            <li class="operator">
+                <select related-attr="operator_id">
+                    {{ for (var i = 0; i < operators.length; i++) { }}
+                        <option value={{= operators[i].id }} {{= filters[0].operator_id == operators[i].id ? 'selected="selected"' : '' }}>
+                            {{= operators[i].name }}
+                        </option>
+                    {{ } }}
+                </select>
+            </li>
+            <li>
+                <input  related-attr="primary-operand-2" class="input-mini" value={{= filters[0].operands[1].value }}>
+            </li>
+            <li>
+                <div class="expander">
+                    &gt;&gt;&gt;&gt;
+                </div>
+            </li>
+        </ul>
+        {{ } }}
+
+        {{ if(filters[1]){ }}
+        <ul class="curation-filter elem-list">
+            <li>
+                for
+            </li>
+            <li>
+                <select related-attr="curation_operator_id">
+                {{ for (var i = 0; i < operators.length; i++) { }}
+                    <option value={{= operators[i].id }} {{= filters[1].operator_id == operators[i].id ? 'selected="selected"' : '' }}>
+                        {{= operators[i].name }}
+                    </option>
+                {{ } }}
+            </li>
+            <li>
+                <input related-attr="curation-operand-1" class="input-mini" value={{= filters[1].operands[0].value }}>
+            </li>
+            <li>
+                <select related-attr="curation-operand-1-type">
+                    <option value="false">times</option>
+                    <option value="true" {{= filters[1].operands[0].is_percentage == "true" ? 'selected="selected"' : '' }}>% of times</option>
+                </select>
+            </li>
+            <li>
+                <div class="expander">
+                    &gt;&gt;&gt;&gt;
+                </div>
+            </li>
+        </ul>
+        {{ } }}
+
+        <div class="options pull-right">
+            x
+        </div>
+
+    {{ } else { }}
+    <!-- -------------------- attribute selector --------------------------------- --> 
+        <ul class="main-selector elem-list pull-left">
+            <li>
+                <select related-attr="selector_id">
+                    <option value="2">Has attribute</option>
+                    <option value="1">Did event</option>
+                </select>
+            </li>
+            <li>
+                <select related-attr="property_id">
+                    <option value="0">Attribute</option>
+                    {{ for (var i = 0; i < attributes.length; i++) { }}
+                        <option value={{= attributes[0].id }} {{= property_id == attributes[i].id ? 'selected="selected"' : '' }}>
+                            {{= attributes[i].name }}
+                        </option>
+                    {{ } }}
+                </select>
+            </li>
+            {{ if(!(property_id == 0 || filters[0])){ }}
+                <li>
+                    <div class="expander">
+                        &gt;&gt;&gt;&gt;
+                    </div>
+                </li>
+            {{ } }}
+        </ul>
+
+        {{ if(filters[0]){ }}
+        <ul class="primary-filter elem-list pull-left">
+            <li class="operator">
+                <select related-attr="operator_id">
+                    {{ for (var i = 0; i < operators.length; i++) { }}
+                        <option value={{= operators[i].id }} {{= filters[0].operator_id == operators[i] ? 'selected="selected"' : '' }}>
+                            {{= operators[i].name }}
+                        </option>
+                    {{ } }}
+                </select>
+            </li>
+            <li>
+                <input related-attr="primary-operand-1" class="input-mini" value={{= filters[0].operands[0].value }}>
+            </li>
+        </ul>
+        {{ } }}
+
+        <div class="options pull-right">
+            x
+        </div>
+    {{ } }}
+
+</script>
+
+<!-- backbone templates -->
+
+<%= javascript_include_tag "application" %>
+
+<script>
+    App.init();
+</script>
 </body>
 </html>

@@ -1,3 +1,36 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.top-bar, .left-bar {
+	display : none;
+}
+
+.edit-recipe-screen {
+	.form-well {
+		.widget-well {
+			margin: 20px;
+
+			.widget-head {
+				background: none;
+			}
+		}
+	}
+
+	.rule {
+		overflow: hidden;
+
+		select {
+			width: auto;
+		}
+
+/*		.primary-filter {
+			display: none;
+		}
+
+		.curation-filter {
+			display: none;
+		}*/
+	}
+}
