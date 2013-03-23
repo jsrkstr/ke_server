@@ -68,6 +68,7 @@
 //= require pontus/js/ios-orientationchange-fix
 // App libs
 //= require backbone_sync
+// require backbone.localStorage
 //= require app
 //= require router
 //= require models/recipe

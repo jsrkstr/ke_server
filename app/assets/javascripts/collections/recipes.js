@@ -6,6 +6,7 @@ App.collections.Recipes = Backbone.Collection.extend({
 	
 	model : App.models.Recipe,
 
+	// localStorage: new Backbone.LocalStorage("recipes"),
 
 	initialize : function(args){
 		// do something...

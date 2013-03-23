@@ -4,7 +4,8 @@ App.routers.Router = Backbone.Router.extend({
     ""                                : "dashboard",
     "dashboard"                       : "dashboard",
     "recipes"                         : "recipes",
-    "recipes/:id/edit"                : "editRecipe"
+    "recipes/:id/edit"                : "editRecipe",
+    "recipes/new"                     : "newRecipe"
   },
 
 
@@ -31,6 +32,14 @@ App.routers.Router = Backbone.Router.extend({
       model.fetch();
     }
 
+    App.currentEditRecipeView = new App.views.EditRecipe({model : model});
+    App.currentEditRecipeView.render();
+  },
+
+
+  newRecipe : function(){
+    this.showScreen("edit-recipe");
+    var model = new App.models.Recipe();
     App.currentEditRecipeView = new App.views.EditRecipe({model : model});
     App.currentEditRecipeView.render();
   },

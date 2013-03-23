@@ -13,6 +13,610 @@
 
 
 	<link rel="shortcut icon" href="ico/favicon.ico">
+
+<script type='text/javascript'>
+   //   google.load('visualization', '1', {'packages': ['geochart']});
+   //   google.setOnLoadCallback(drawRegionsMap);
+   //    function drawRegionsMap() {
+   //      var data = google.visualization.arrayToDataTable([
+   //        ['Country', 'Popularity'],
+   //        ['Germany', 200],
+   //        ['United States', 300],
+   //        ['Brazil', 400],
+   //        ['Canada', 500],
+   //        ['France', 600],
+   //        ['RU', 700]
+   //      ]);
+   //      var options = {
+			//  colorAxis: {colors: ['#c45118', '#23415c', '#8c2424']}
+			// };
+   //      var chart = new google.visualization.GeoChart(document.getElementById('chart_div_geo'));
+   //      chart.draw(data, options);
+   //  };
+    </script>
+<script type='text/javascript'>
+    //  google.load('visualization', '1', {'packages': ['geochart']});
+    //  google.setOnLoadCallback(drawMarkersMap);
+    //   function drawMarkersMap() {
+    //   var data = google.visualization.arrayToDataTable([
+    //     ['City',   'Population', 'Area'],
+    //     ['Rome',      2761477,    1285.31],
+    //     ['Milan',     1324110,    181.76],
+    //     ['Naples',    959574,     117.27],
+    //     ['Turin',     907563,     130.17],
+    //     ['Palermo',   655875,     158.9],
+    //     ['Genoa',     607906,     243.60],
+    //     ['Bologna',   380181,     140.7],
+    //     ['Florence',  371282,     102.41],
+    //     ['Fiumicino', 67370,      213.44],
+    //     ['Anzio',     52192,      43.43],
+    //     ['Ciampino',  38262,      11]
+    //   ]);
+    //   var options = {
+    //     region: 'IT',
+    //     displayMode: 'markers',
+    //     colorAxis: {colors: ['#e24a00', '#2a0000']}
+    //   };
+    //   var chart = new google.visualization.GeoChart(document.getElementById('chart_div_geo1'));
+    //   chart.draw(data, options);
+    // };
+    </script>
+
+</head>
+<body class="menu_hover">
+    <% yield %>
+<div class="top-bar">
+	<div class="scroll-top">
+		<a href="#" class="tip-top" title="Go Top">Top</a>
+	</div>
+	<div class="bar-container">
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span3">
+					<div class="logo">
+						<img src="images/logo.jpg" width="60" alt="Anchor">
+					</div>
+				</div>
+				<div class="span6">
+					<div class="navbar-search">
+						<form class="form-search">
+							<div class="input-append">
+								<input type="text" class="search-query" value="Topic...">
+								<button type="submit" class="btn">Search</button>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="span3 clearfix">
+					<div class="btn-toolbar top-toolbar pull-right">
+						<div class="btn-group dropdown-append">
+							<a data-toggle="dropdown" class="dropdown-toggle btn" href="#" title="Notifications"><span class="notify-tiptop">10</span><i class="gray-icons globe"></i></a>
+							<div class="dropdown-menu msg-dropdown pull-right">
+								<ul class="msg-list">
+									<li class="clearfix">
+									<h6 class="dropdown-h pull-left">Notifications</h6>
+									<span class="pull-right msg-count"><a href="#">12 New</a></span></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/post-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>Vestibulum</i> is posted an article. lacus est congue... </span><span class="notification-meta"> 12 hours ago </span></a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/vdo-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>jaman</i> is posted a video. lacus est congue... </span><span class="notification-meta"> 12 hours ago </span></a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/audio-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>zara</i> is posted an audio files. lacus est congue... </span><span class="notification-meta"> 12 hours ago </span></a></li>
+									<li class="clearfix"><a href="#" class="btn btn-block view-all">View All</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="btn-group dropdown-append">
+							<a data-toggle="dropdown" class="dropdown-toggle btn" href="#" title="Messages"><span class="notify-tiptop tips-blue">10</span><i class="gray-icons mail"></i></a>
+							<div class="dropdown-menu msg-dropdown pull-right">
+								<ul class="msg-list">
+									<li class="clearfix">
+									<h6 class="dropdown-h pull-left">Messages</h6>
+									<span class="pull-right msg-count"><a href="#">12 New</a></span></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/avatar-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>feroz</i> is send a message to you. lacus est congue... </span><span class="notification-meta"> 3 hours ago </span></a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/avatar-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>chisty</i> is send a message to you. lacus est congue... </span><span class="notification-meta"> 10 hours ago </span></a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/avatar-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>golam</i> is send a message to you. lacus est congue... </span><span class="notification-meta"> on Tuesday </span></a></li>
+									<li class="clearfix"><a href="#" class="btn btn-block view-all">View All</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="btn-group dropdown-append">
+							<a data-toggle="dropdown" class="dropdown-toggle btn" href="#" title="Recent Updates"><span class="notify-tiptop tips-green">100</span><i class="gray-icons list_image"></i></a>
+							<div class="dropdown-menu msg-dropdown pull-right">
+								<ul class="msg-list">
+									<li class="clearfix">
+									<h6 class="dropdown-h pull-left">Recent Updates</h6>
+									<span class="pull-right msg-count"><a href="#">12 New</a></span></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/order-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>Order</i> $3,645.8 Dollars order is pending. waiting for approval... </span></a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/events-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>Events</i> Total 30 new events is created... </span><span class="notification-meta"> Last Week </span></a></li>
+									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/files-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>Files</i> Total 2,564 files are posted in last week... </span><span class="notification-meta"> Last Week </span></a></li>
+									<li class="clearfix"><a href="#" class="btn btn-block view-all">View All</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container-fluid">
+			
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li><a href="index.html"><i class="white-icons home"></i> Home</a></li>
+					<!-- <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons list_images"></i> Forms <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="form-elements.html"><i class="ledgray-icons application_form_co"></i> All Form Elements</a></li>
+						<li><a href="form-validation.html"><i class="ledgray-icons asterisk_orange_co"></i> Form Validation</a></li>
+						<li><a href="form-styles.html"><i class="ledgray-icons application_double_co"></i> Form Styles</a></li>
+						<li><a href="form-wizard.html"><i class="ledgray-icons application_view_tile_co"></i> Form Wizard</a></li>
+					</ul>
+					</li>
+					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons cup"></i> Features <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="basic-tables.html"><i class=" ledgray-icons table_co"></i> Basic Tables</a></li>
+						<li><a href="data-table.html"><i class=" ledgray-icons application_columns_co"></i> Data Tables</a></li>
+						<li><a href="widgets.html"><i class=" ledgray-icons plugin_co"></i> Widgets</a></li>
+						<li><a href="grid.html"><i class=" ledgray-icons grid_dot_co"></i> Grid</a></li>
+						<li><a href="typography.html"><i class=" ledgray-icons font_co"></i> Typography</a></li>
+						<li><a href="calendar.html"><i class=" ledgray-icons calendar_2_co"></i> Calendar</a></li>
+						<li><a href="charts.html"><i class=" ledgray-icons chart_bar_co"></i> Charts</a></li>
+						<li><a href="file-manager.html"><i class=" ledgray-icons folder_co"></i> File Manager</a></li>
+						<li class="divider"></li>
+						<li><a href="ui-elements.html"><i class=" ledgray-icons wand_co"></i> UI Elements</a></li>
+						<li><a href="buttons-icons.html"><i class=" ledgray-icons pill_co"></i> Buttons &amp; Icons</a></li> -->
+					</ul>
+					<!-- </li>
+					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons documents"></i> Pages <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li class="dropdown-submenu"><a href="#"><i class=" ledgray-icons cross_octagon_fram_co"></i> Error Pages</a>
+						<ul class="dropdown-menu">
+							<li><a href="page-403.html"><i class=" ledgray-icons page_white_error_co"></i> 403 Error Page</a></li>
+							<li><a href="page-404.html"><i class=" ledgray-icons page_white_error_co"></i> 404 Error Page</a></li>
+							<li><a href="page-405.html"><i class=" ledgray-icons page_white_error_co"></i> 405 Error Page</a></li>
+							<li><a href="page-500.html"><i class=" ledgray-icons page_white_error_co"></i> 500 Error Page</a></li>
+							<li><a href="page-503.html"><i class=" ledgray-icons page_white_error_co"></i> 503 Error Page</a></li>
+						</ul>
+						</li>
+						<li><a href="login.html"><i class=" ledgray-icons ui_text_field_password_co"></i> Login Page</a></li>
+						<li><a href="flip-login.html"><i class=" ledgray-icons ui_text_field_password_co"></i> Flip Login Page</a></li>
+						<li><a href="forgot-pass.html"><i class=" ledgray-icons textfield_rename_co"></i> Forgot Password</a></li>
+						<li><a href="inbox.html"><i class=" ledgray-icons inbox_co"></i> Inbox</a></li>
+						<li><a href="user-profile.html"><i class=" ledgray-icons user_silhouette_co"></i> User Profile</a></li>
+						<li><a href="invoice.html"><i class=" ledgray-icons money_dollar_co"></i> Invoice</a></li>
+						<li><a href="gallery.html"><i class=" ledgray-icons slides_co"></i> Gallery</a></li>
+						<li><a href="search.html"><i class=" ledgray-icons magnifier_co"></i> Search Page</a></li>
+					</ul>
+					</li> -->
+					<!-- <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons frames"></i> Extras <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="blank-layout.html"><i class=" ledgray-icons layout_mix_co"></i> Blank Layout</a></li>
+						<li><a href="layout-01.html"><i class=" ledgray-icons layout_co"></i> Layout 01</a></li>
+						<li><a href="layout-02.html"><i class=" ledgray-icons layout_select_co"></i> Layout 02</a></li>
+						<li><a href="layout-03.html"><i class=" ledgray-icons layout_select_content_co"></i> Layout 03</a></li>
+						<li><a href="layout-with-sidebar.html"><i class=" ledgray-icons layout_select_sidebar_co"></i> Layout With Sidebar</a></li>
+						<li><a href="fixed-layout.html"><i class=" ledgray-icons layout_join_co"></i> Fixed Layout</a></li>
+						<li><a href="google-chart.html"><i class=" ledgray-icons chart_curve_co"></i> Google Chart</a></li>
+					</ul>
+					</li> -->
+				</ul>
+				<!-- <ul class="nav pull-right">
+					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="flag-icons"><img src="images/flag-icons/bd.png" width="16" height="11" alt="Bangla"></i><b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#"><i class="flag-icons"><img src="images/flag-icons/us.png" width="16" height="11" alt="United States"></i> United States</a></li>
+						<li><a href="#"><i class="flag-icons"><img src="images/flag-icons/gb.png" width="16" height="11" alt="United Kingdom"></i> United Kingdom</a></li>
+						<li><a href="#"><i class="flag-icons"><img src="images/flag-icons/au.png" width="16" height="11" alt="United States"></i> Australia</a></li>
+					</ul>
+					</li>
+					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons admin_user_2"></i> Uncle Jhone <b class="caret"></b></a>
+					<div class="dropdown-menu admin-dropdown">
+						<div class="clearfix">
+							<div class="admin-user-thumb">
+								<img src="images/avatar-80x80.png" width="80" height="80" alt="img">
+							</div>
+							<div class="admin-menu-link">
+								<ul>
+									<li><a href="#"><i class=" gray-icons user"></i> Jhone Lee</a></li>
+									<li><a href="#"><i class=" gray-icons mail"></i> jhon@mymail.com</a></li>
+									<li><a href="#"><i class=" gray-icons create_write"></i> Edit Profile </a></li>
+									<li><a href="#"><i class=" gray-icons cog_2"></i> Settings</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="admin-action">
+							<button class="btn btn-extend btn-block" type="button">Logout</button>
+						</div>
+					</div>
+					</li>
+				</ul> -->
+			</div>
+			<!-- /.nav-collapse -->
+		</div>
+	</div>
+	<!-- /navbar-inner -->
+</div>
+<div class="left-bar">
+	<div class="side-nav">
+		<ul>
+			<li><a data-toggle="dropdown" class="dropdown-toggle" href="#/dashboard"><span class="leftnav-icon computer_imac_blk"></span><span class="leftnav-label">Dashbard</span></a>
+			</li>
+			<!-- <li><a href="#"><span class="leftnav-icon folder_blk"></span><span class="leftnav-label">Medias</span></a></li>
+			<li><a href="#"><span class="leftnav-icon chart_8_blk"></span><span class="leftnav-label">Statistics</span></a></li>
+			<li><a href="#"><span class="leftnav-icon money_blk"></span><span class="leftnav-label">Orders</span></a></li>
+			<li><a href="#"><span class="leftnav-icon help_blk"></span><span class="leftnav-label">Support</span></a></li> -->
+			<li><a href="#/recipes"><span class="leftnav-icon cog_3_blk"></span><span class="leftnav-label">Recipies</span></a></li>
+		</ul>
+	</div>
+</div>
+<div class="main-wrapper">
+	<div class="active-page">
+		<ul>
+			<li><span class="active-page-icon computer_imac_blk"></span><span>Dashboard</span></li>
+		</ul>
+	</div>
+
+    <!-- dashboard container -->
+	<div class="container-fluid dashboard-screen">
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="box-widget">
+					<div class="widget-head overview-chart clearfix">
+						<span class="h-icon"><i class="gray-icons graph"></i></span>
+						<h4 class="pull-left">Events overview</h4>
+						<div id="reportrange" class="pull-right range-dropdown">
+							<i class="icon-calendar icon-large"></i><span></span><b class="caret"></b>
+						</div>
+					</div>
+					<div class="widget-container">
+						<div class="widget-block">
+							<div class=" row-fluid">
+								<div class="span8">
+									<div id="chart6">
+									</div>
+								</div>
+								<div class="span4">
+									<h3 class="h-overview">3458 People visited this site</h3>
+									<ul class="visit-overview">
+										<li class="clearfix">
+										<div class="chart-overview line-chart-overview">
+											 8,4,5,6,7,8,1,4,4,10,10,10,10,11,12,13,4,6,5,9,10
+										</div>
+										 Visits: 4,712</li>
+										<li>
+										<div class="chart-overview line-chart-overview">
+											 8,4,5,6,7,8,1,4,4,10,10,10,10,9,8,7,4,6,5,9,10
+										</div>
+										 Unique Visitors: 3,773 </li>
+										<li>
+										<div class="chart-overview line-chart-overview">
+											 20,19,18,17,16,15,1,4,4,10,10,10,10,9,8,7,4,6,5,9,10
+										</div>
+										 Pageviews: 14,343 </li>
+										<li>
+										<div class="chart-overview line-chart-overview">
+											 8,4,20,25,30,50,1,4,4,10,10,10,10,50,30,20,4,6,5,9,10
+										</div>
+										 Pages / Visit: 3.04 </li>
+										<li>
+										<div class="chart-overview line-chart-overview">
+											 8,4,20,30,40,1,4,4,10,10,10,10,8,10,12,4,6,5,9,10
+										</div>
+										 Avg. Visit Duration: 00:02:57 </li>
+										<li>
+										<div class="chart-overview line-chart-overview">
+											 8,4,10,8,7,6,1,4,4,10,10,10,10,20,19,18,4,6,5,9,10
+										</div>
+										 Bounce Rate: 23.09% </li>
+										<li>
+										<div class="chart-overview line-chart-overview">
+											 8,4,8,10,20,12,4,4,10,10,10,10,20,12,12,4,6,5,9,10
+										</div>
+										 % New Visits: 76.83% </li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <!-- dashboard container -->
+
+    <!-- recipe home screen -->
+    <div class="container-fluid recipes-screen">
+        <div class="row-fluid">
+        	<div class="span8">
+        		<a href="#/recipes/new" class="btn btn-new-recipe">New Recipe</a>
+        	</div>
+            <div class="span8 recipes">
+            </div>
+        </div>
+    </div>
+    <!-- recipe home screen -->
+
+
+    <!-- edit recipe screen -->
+    <div class="container-fluid edit-recipe-screen">
+        <div class="row-fluid">
+            <div class="span12 form">
+            </div>
+        </div>
+    </div>
+    <!-- edit recipe screen -->
+
+</div>
+
+
+<!-- backbone templates -->
+
+<script type="text/template" id="recipe-templ">
+<div class="box-widget">
+    <div class="widget-head clearfix">
+        <span class="h-icon"><i class="gray-icons pencil"></i></span>
+        <h4 class="pull-left">{{= name }}</h4>
+        <div class="on_off pull-right">
+            <input type="checkbox" checked="checked" id="on_off_on"/>
+        </div>
+    </div>
+    <div class="widget-container">
+        <div class="widget-block">
+            
+        </div>
+    </div>
+</div>
+</script>
+
+<script type="text/template" id="edit-recipe-templ">
+<div class="box-widget">
+    <div class="widget-head clearfix">
+        <span class="h-icon"><i class="gray-icons list"></i></span>
+        <h4>{{= name }}</h4>
+        <div class="widget-action dropdown ">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="gray-icons cog_2"></i><b class="caret"></b></a>
+            <ul class="dropdown-menu pull-right">
+                <li><a href="#"><i class=" ledgray-icons add_co"></i> Add Row</a></li>
+                <li><a href="#"><i class="ledgray-icons disconnect_co"></i> Suspend</a></li>
+                <li><a href="#"><i class="ledgray-icons accept_co"></i> Approved</a></li>
+                <li><a href="#"><i class="ledgray-icons cross_co"></i> Delete</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="widget-container">
+        <div class="form-container">
+            <form class="form-well">
+                <div class="widget-well user-segment-form">
+                    <div class="widget-head clearfix">
+                        <h4><i class="ledgray-icons grid_dot_co"></i> Grid 9</h4>
+                    </div>
+                    <div class="widget-container">
+                        <div class="widget-block">
+                            <h5>Heading</h5>
+                            <p>
+                                Morbi in ligula dolor, ac faucibus odio. Maecenas vestibulum est sit amet lorem dapibus mattis. Pellentesque interdum egestas suscipit. Pellentesque sit amet ligula dui, id mollis turpis. Duis imperdiet egestas ipsum quis feugiat. Aliquam sagittis elementum mi ac viverra. Duis a nisi arcu.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-well">
+                    <div class="widget-head clearfix">
+                        <h4><i class="ledgray-icons grid_dot_co"></i> Grid 9</h4>
+                    </div>
+                    <div class="widget-container">
+                        <div class="widget-block">
+                            <h5>Heading</h5>
+                            <p>
+                                Morbi in ligula dolor, ac faucibus odio. Maecenas vestibulum est sit amet lorem dapibus mattis. Pellentesque interdum egestas suscipit. Pellentesque sit amet ligula dui, id mollis turpis. Duis imperdiet egestas ipsum quis feugiat. Aliquam sagittis elementum mi ac viverra. Duis a nisi arcu.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-extend btn-save">Save changes</button>
+                    <button type="button" class="btn btn-danger btn-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</script>
+
+
+<script type="text/template" id="rule-templ">
+    {{ if(selector_id == 1){  }}
+        <ul class="main-selector elem-list pull-left">
+            <li>
+                <select related-attr="selector_id">
+                    <option value="1">Did event</option>
+                    <option value="2">Has attribute</option>
+                </select>
+            </li>
+            <li>
+                <select related-attr="event_id">
+                    <option value="0">Event</option>
+                    {{ for (var i = 0; i < events.length; i++) { }}
+                        <option value={{= events[i].id }} {{= event_id == events[i].id ? 'selected="selected"' : '' }}>
+                            {{= events[i].name }}
+                        </option>
+                    {{ } }}
+                </select>
+            </li>
+            {{ if(!(event_id == 0 || filters[0])){ }}
+                <li>
+                    <div class="expander">
+                        &gt;&gt;&gt;&gt;
+                    </div>
+                </li>
+            {{ } }}
+        </ul>
+
+        {{ var curationFilter = _.where(filters, {type : "curation"})[0]; }}
+        {{ var primaryFilter = _.where(filters, {type : "primary"})[0]; }}
+
+        {{ if(primaryFilter){ }}
+        <ul class="primary-filter elem-list pull-left">
+            <li>
+                <select related-attr="filter-selector">
+                    <option value="1">where</option>
+                    <option value="2">for</option>
+                </select>
+            </li>
+            <li>
+                <select related-attr="primary-operand-1">
+                    <option value="0">Property</option>
+                    {{ var properties = _.where(events, { id : event_id})[0].properties; }}
+
+                    {{ for (var i = 0; i < properties.length; i++) { }}
+                        <option value={{= properties[i] }} {{= primaryFilter.operands[0].value == properties[i] ? 'selected="selected"' : '' }}>
+                            {{= properties[i] }}
+                        </option>
+                    {{ } }}
+                </select>
+            </li>
+            <li class="operator">
+                <select related-attr="operator_id">
+                    {{ for (var i = 0; i < operators.length; i++) { }}
+                        <option value={{= operators[i].id }} {{= primaryFilter.operator_id == operators[i].id ? 'selected="selected"' : '' }}>
+                            {{= operators[i].name }}
+                        </option>
+                    {{ } }}
+                </select>
+            </li>
+            <li>
+                <input type="text" related-attr="primary-operand-2" class="input-mini" value={{= primaryFilter.operands[1].value }}>
+            </li>
+            {{ if(!curationFilter){ }}
+            <li>
+                <div class="expander">
+                    &gt;&gt;&gt;&gt;
+                </div>
+            </li>
+            {{ } }}
+        </ul>
+        {{ } }}
+
+        {{ if(curationFilter){ }}
+        <ul class="curation-filter elem-list pull-left">
+            <li>
+                <select related-attr="filter-selector">
+                    <option value="2">for</option>
+                    <option value="1">where</option>
+                </select>
+            </li>
+            <li>
+                <select related-attr="curation_operator_id">
+                {{ for (var i = 0; i < operators.length; i++) { }}
+                    <option value={{= operators[i].id }} {{= curationFilter.operator_id == operators[i].id ? 'selected="selected"' : '' }}>
+                        {{= operators[i].name }}
+                    </option>
+                {{ } }}
+                </select>
+            </li>
+            <li>
+                <input type="text" related-attr="curation-operand-1" class="input-mini" value={{= curationFilter.operands[0].value }}>
+            </li>
+            <li>
+                <select related-attr="curation-operand-1-type">
+                    <option value="false">times</option>
+                    <option value="true" {{= curationFilter.operands[0].is_percentage == "true" ? 'selected="selected"' : '' }}>% of times</option>
+                </select>
+            </li>
+        </ul>
+        {{ } }}
+
+        <div class="options pull-right">
+            x
+        </div>
+
+    {{ } else { }}
+    <!-- -------------------- attribute selector --------------------------------- --> 
+        <ul class="main-selector elem-list pull-left">
+            <li>
+                <select related-attr="selector_id">
+                    <option value="2">Has attribute</option>
+                    <option value="1">Did event</option>
+                </select>
+            </li>
+            <li>
+                <select related-attr="property_id">
+                    <option value="0">Attribute</option>
+                    {{ for (var i = 0; i < attributes.length; i++) { }}
+                        <option value={{= attributes[0].id }} {{= property_id == attributes[i].id ? 'selected="selected"' : '' }}>
+                            {{= attributes[i].name }}
+                        </option>
+                    {{ } }}
+                </select>
+            </li>
+            {{ if(!(property_id == 0 || filters[0])){ }}
+                <li>
+                    <div class="expander">
+                        &gt;&gt;&gt;&gt;
+                    </div>
+                </li>
+            {{ } }}
+        </ul>
+
+        {{ if(filters[0]){ }}
+        <ul class="primary-filter elem-list pull-left">
+            <li class="operator">
+                <select related-attr="operator_id">
+                    {{ for (var i = 0; i < operators.length; i++) { }}
+                        <option value={{= operators[i].id }} {{= filters[0].operator_id == operators[i] ? 'selected="selected"' : '' }}>
+                            {{= operators[i].name }}
+                        </option>
+                    {{ } }}
+                </select>
+            </li>
+            <li>
+                <input type="text" related-attr="primary-operand-1" class="input-mini" value={{= filters[0].operands[0].value }}>
+            </li>
+        </ul>
+        {{ } }}
+
+        <div class="options pull-right">
+            x
+        </div>
+    {{ } }}
+
+</script>
+
+<script type="text/template" id="rule-groups-templ">
+    <div>
+        <label>Group By</label>
+        <select class="group-by-main">
+            <option value="and">AND</option>
+            <option value="or" {{= operator == "or" ? 'selected="selected"' : '' }}>OR</option>
+        </select>
+    </div>
+    <div class="all-rule-groups">
+    </div>
+    <div class="add-rule-group">
+        +++
+    </div>
+</script>
+
+<script type="text/template" id="rule-group-templ">
+    <div>
+        <label>Group By</label>
+        <select class="group-by-secondary">
+            <option value="and">AND</option>
+            <option value="or" {{= operator == "or" ? 'selected="selected"' : '' }}>OR</option>
+        </select>
+    </div>
+    <div class="all-rules">
+    </div>
+    <div class="add-rule">
+        +++
+    </div>
+</script>
+
+<!-- backbone templates -->
+
+<%= javascript_include_tag "application" %>
+
+<script>
+    App.init();
+</script>
 <script>
 $(function () {
     $.jqplot._noToImageButton = true;
@@ -378,606 +982,6 @@ $(function () {
         }
     });
 });
-</script>
-<script type='text/javascript'>
-   //   google.load('visualization', '1', {'packages': ['geochart']});
-   //   google.setOnLoadCallback(drawRegionsMap);
-   //    function drawRegionsMap() {
-   //      var data = google.visualization.arrayToDataTable([
-   //        ['Country', 'Popularity'],
-   //        ['Germany', 200],
-   //        ['United States', 300],
-   //        ['Brazil', 400],
-   //        ['Canada', 500],
-   //        ['France', 600],
-   //        ['RU', 700]
-   //      ]);
-   //      var options = {
-			//  colorAxis: {colors: ['#c45118', '#23415c', '#8c2424']}
-			// };
-   //      var chart = new google.visualization.GeoChart(document.getElementById('chart_div_geo'));
-   //      chart.draw(data, options);
-   //  };
-    </script>
-<script type='text/javascript'>
-    //  google.load('visualization', '1', {'packages': ['geochart']});
-    //  google.setOnLoadCallback(drawMarkersMap);
-    //   function drawMarkersMap() {
-    //   var data = google.visualization.arrayToDataTable([
-    //     ['City',   'Population', 'Area'],
-    //     ['Rome',      2761477,    1285.31],
-    //     ['Milan',     1324110,    181.76],
-    //     ['Naples',    959574,     117.27],
-    //     ['Turin',     907563,     130.17],
-    //     ['Palermo',   655875,     158.9],
-    //     ['Genoa',     607906,     243.60],
-    //     ['Bologna',   380181,     140.7],
-    //     ['Florence',  371282,     102.41],
-    //     ['Fiumicino', 67370,      213.44],
-    //     ['Anzio',     52192,      43.43],
-    //     ['Ciampino',  38262,      11]
-    //   ]);
-    //   var options = {
-    //     region: 'IT',
-    //     displayMode: 'markers',
-    //     colorAxis: {colors: ['#e24a00', '#2a0000']}
-    //   };
-    //   var chart = new google.visualization.GeoChart(document.getElementById('chart_div_geo1'));
-    //   chart.draw(data, options);
-    // };
-    </script>
-
-</head>
-<body class="menu_hover">
-    <% yield %>
-<div class="top-bar">
-	<div class="scroll-top">
-		<a href="#" class="tip-top" title="Go Top">Top</a>
-	</div>
-	<div class="bar-container">
-		<div class="container-fluid">
-			<div class="row-fluid">
-				<div class="span3">
-					<div class="logo">
-						<img src="images/logo.jpg" width="60" alt="Anchor">
-					</div>
-				</div>
-				<div class="span6">
-					<div class="navbar-search">
-						<form class="form-search">
-							<div class="input-append">
-								<input type="text" class="search-query" value="Topic...">
-								<button type="submit" class="btn">Search</button>
-							</div>
-						</form>
-					</div>
-				</div>
-				<div class="span3 clearfix">
-					<div class="btn-toolbar top-toolbar pull-right">
-						<div class="btn-group dropdown-append">
-							<a data-toggle="dropdown" class="dropdown-toggle btn" href="#" title="Notifications"><span class="notify-tiptop">10</span><i class="gray-icons globe"></i></a>
-							<div class="dropdown-menu msg-dropdown pull-right">
-								<ul class="msg-list">
-									<li class="clearfix">
-									<h6 class="dropdown-h pull-left">Notifications</h6>
-									<span class="pull-right msg-count"><a href="#">12 New</a></span></li>
-									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/post-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>Vestibulum</i> is posted an article. lacus est congue... </span><span class="notification-meta"> 12 hours ago </span></a></li>
-									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/vdo-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>jaman</i> is posted a video. lacus est congue... </span><span class="notification-meta"> 12 hours ago </span></a></li>
-									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/audio-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>zara</i> is posted an audio files. lacus est congue... </span><span class="notification-meta"> 12 hours ago </span></a></li>
-									<li class="clearfix"><a href="#" class="btn btn-block view-all">View All</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="btn-group dropdown-append">
-							<a data-toggle="dropdown" class="dropdown-toggle btn" href="#" title="Messages"><span class="notify-tiptop tips-blue">10</span><i class="gray-icons mail"></i></a>
-							<div class="dropdown-menu msg-dropdown pull-right">
-								<ul class="msg-list">
-									<li class="clearfix">
-									<h6 class="dropdown-h pull-left">Messages</h6>
-									<span class="pull-right msg-count"><a href="#">12 New</a></span></li>
-									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/avatar-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>feroz</i> is send a message to you. lacus est congue... </span><span class="notification-meta"> 3 hours ago </span></a></li>
-									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/avatar-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>chisty</i> is send a message to you. lacus est congue... </span><span class="notification-meta"> 10 hours ago </span></a></li>
-									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/avatar-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>golam</i> is send a message to you. lacus est congue... </span><span class="notification-meta"> on Tuesday </span></a></li>
-									<li class="clearfix"><a href="#" class="btn btn-block view-all">View All</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="btn-group dropdown-append">
-							<a data-toggle="dropdown" class="dropdown-toggle btn" href="#" title="Recent Updates"><span class="notify-tiptop tips-green">100</span><i class="gray-icons list_image"></i></a>
-							<div class="dropdown-menu msg-dropdown pull-right">
-								<ul class="msg-list">
-									<li class="clearfix">
-									<h6 class="dropdown-h pull-left">Recent Updates</h6>
-									<span class="pull-right msg-count"><a href="#">12 New</a></span></li>
-									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/order-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>Order</i> $3,645.8 Dollars order is pending. waiting for approval... </span></a></li>
-									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/events-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>Events</i> Total 30 new events is created... </span><span class="notification-meta"> Last Week </span></a></li>
-									<li class="clearfix"><a href="#"><span class="dropdown-thumb"><img src="images/files-40x40.png" width="40" height="40" alt="Avatar"></span><span><i>Files</i> Total 2,564 files are posted in last week... </span><span class="notification-meta"> Last Week </span></a></li>
-									<li class="clearfix"><a href="#" class="btn btn-block view-all">View All</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="navbar navbar-fixed-top">
-	<div class="navbar-inner">
-		<div class="container-fluid">
-			
-			<div class="nav-collapse">
-				<ul class="nav">
-					<li><a href="index.html"><i class="white-icons home"></i> Home</a></li>
-					<!-- <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons list_images"></i> Forms <b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="form-elements.html"><i class="ledgray-icons application_form_co"></i> All Form Elements</a></li>
-						<li><a href="form-validation.html"><i class="ledgray-icons asterisk_orange_co"></i> Form Validation</a></li>
-						<li><a href="form-styles.html"><i class="ledgray-icons application_double_co"></i> Form Styles</a></li>
-						<li><a href="form-wizard.html"><i class="ledgray-icons application_view_tile_co"></i> Form Wizard</a></li>
-					</ul>
-					</li>
-					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons cup"></i> Features <b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="basic-tables.html"><i class=" ledgray-icons table_co"></i> Basic Tables</a></li>
-						<li><a href="data-table.html"><i class=" ledgray-icons application_columns_co"></i> Data Tables</a></li>
-						<li><a href="widgets.html"><i class=" ledgray-icons plugin_co"></i> Widgets</a></li>
-						<li><a href="grid.html"><i class=" ledgray-icons grid_dot_co"></i> Grid</a></li>
-						<li><a href="typography.html"><i class=" ledgray-icons font_co"></i> Typography</a></li>
-						<li><a href="calendar.html"><i class=" ledgray-icons calendar_2_co"></i> Calendar</a></li>
-						<li><a href="charts.html"><i class=" ledgray-icons chart_bar_co"></i> Charts</a></li>
-						<li><a href="file-manager.html"><i class=" ledgray-icons folder_co"></i> File Manager</a></li>
-						<li class="divider"></li>
-						<li><a href="ui-elements.html"><i class=" ledgray-icons wand_co"></i> UI Elements</a></li>
-						<li><a href="buttons-icons.html"><i class=" ledgray-icons pill_co"></i> Buttons &amp; Icons</a></li> -->
-					</ul>
-					<!-- </li>
-					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons documents"></i> Pages <b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li class="dropdown-submenu"><a href="#"><i class=" ledgray-icons cross_octagon_fram_co"></i> Error Pages</a>
-						<ul class="dropdown-menu">
-							<li><a href="page-403.html"><i class=" ledgray-icons page_white_error_co"></i> 403 Error Page</a></li>
-							<li><a href="page-404.html"><i class=" ledgray-icons page_white_error_co"></i> 404 Error Page</a></li>
-							<li><a href="page-405.html"><i class=" ledgray-icons page_white_error_co"></i> 405 Error Page</a></li>
-							<li><a href="page-500.html"><i class=" ledgray-icons page_white_error_co"></i> 500 Error Page</a></li>
-							<li><a href="page-503.html"><i class=" ledgray-icons page_white_error_co"></i> 503 Error Page</a></li>
-						</ul>
-						</li>
-						<li><a href="login.html"><i class=" ledgray-icons ui_text_field_password_co"></i> Login Page</a></li>
-						<li><a href="flip-login.html"><i class=" ledgray-icons ui_text_field_password_co"></i> Flip Login Page</a></li>
-						<li><a href="forgot-pass.html"><i class=" ledgray-icons textfield_rename_co"></i> Forgot Password</a></li>
-						<li><a href="inbox.html"><i class=" ledgray-icons inbox_co"></i> Inbox</a></li>
-						<li><a href="user-profile.html"><i class=" ledgray-icons user_silhouette_co"></i> User Profile</a></li>
-						<li><a href="invoice.html"><i class=" ledgray-icons money_dollar_co"></i> Invoice</a></li>
-						<li><a href="gallery.html"><i class=" ledgray-icons slides_co"></i> Gallery</a></li>
-						<li><a href="search.html"><i class=" ledgray-icons magnifier_co"></i> Search Page</a></li>
-					</ul>
-					</li> -->
-					<!-- <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons frames"></i> Extras <b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="blank-layout.html"><i class=" ledgray-icons layout_mix_co"></i> Blank Layout</a></li>
-						<li><a href="layout-01.html"><i class=" ledgray-icons layout_co"></i> Layout 01</a></li>
-						<li><a href="layout-02.html"><i class=" ledgray-icons layout_select_co"></i> Layout 02</a></li>
-						<li><a href="layout-03.html"><i class=" ledgray-icons layout_select_content_co"></i> Layout 03</a></li>
-						<li><a href="layout-with-sidebar.html"><i class=" ledgray-icons layout_select_sidebar_co"></i> Layout With Sidebar</a></li>
-						<li><a href="fixed-layout.html"><i class=" ledgray-icons layout_join_co"></i> Fixed Layout</a></li>
-						<li><a href="google-chart.html"><i class=" ledgray-icons chart_curve_co"></i> Google Chart</a></li>
-					</ul>
-					</li> -->
-				</ul>
-				<!-- <ul class="nav pull-right">
-					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="flag-icons"><img src="images/flag-icons/bd.png" width="16" height="11" alt="Bangla"></i><b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#"><i class="flag-icons"><img src="images/flag-icons/us.png" width="16" height="11" alt="United States"></i> United States</a></li>
-						<li><a href="#"><i class="flag-icons"><img src="images/flag-icons/gb.png" width="16" height="11" alt="United Kingdom"></i> United Kingdom</a></li>
-						<li><a href="#"><i class="flag-icons"><img src="images/flag-icons/au.png" width="16" height="11" alt="United States"></i> Australia</a></li>
-					</ul>
-					</li>
-					<li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="white-icons admin_user_2"></i> Uncle Jhone <b class="caret"></b></a>
-					<div class="dropdown-menu admin-dropdown">
-						<div class="clearfix">
-							<div class="admin-user-thumb">
-								<img src="images/avatar-80x80.png" width="80" height="80" alt="img">
-							</div>
-							<div class="admin-menu-link">
-								<ul>
-									<li><a href="#"><i class=" gray-icons user"></i> Jhone Lee</a></li>
-									<li><a href="#"><i class=" gray-icons mail"></i> jhon@mymail.com</a></li>
-									<li><a href="#"><i class=" gray-icons create_write"></i> Edit Profile </a></li>
-									<li><a href="#"><i class=" gray-icons cog_2"></i> Settings</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="admin-action">
-							<button class="btn btn-extend btn-block" type="button">Logout</button>
-						</div>
-					</div>
-					</li>
-				</ul> -->
-			</div>
-			<!-- /.nav-collapse -->
-		</div>
-	</div>
-	<!-- /navbar-inner -->
-</div>
-<div class="left-bar">
-	<div class="side-nav">
-		<ul>
-			<li><a data-toggle="dropdown" class="dropdown-toggle" href="#/dashboard"><span class="leftnav-icon computer_imac_blk"></span><span class="leftnav-label">Dashbard</span></a>
-			</li>
-			<!-- <li><a href="#"><span class="leftnav-icon folder_blk"></span><span class="leftnav-label">Medias</span></a></li>
-			<li><a href="#"><span class="leftnav-icon chart_8_blk"></span><span class="leftnav-label">Statistics</span></a></li>
-			<li><a href="#"><span class="leftnav-icon money_blk"></span><span class="leftnav-label">Orders</span></a></li>
-			<li><a href="#"><span class="leftnav-icon help_blk"></span><span class="leftnav-label">Support</span></a></li> -->
-			<li><a href="#/recipes"><span class="leftnav-icon cog_3_blk"></span><span class="leftnav-label">Recipies</span></a></li>
-		</ul>
-	</div>
-</div>
-<div class="main-wrapper">
-	<div class="active-page">
-		<ul>
-			<li><span class="active-page-icon computer_imac_blk"></span><span>Dashboard</span></li>
-		</ul>
-	</div>
-
-    <!-- dashboard container -->
-	<div class="container-fluid dashboard-screen">
-		<div class="row-fluid">
-			<div class="span12">
-				<div class="box-widget">
-					<div class="widget-head overview-chart clearfix">
-						<span class="h-icon"><i class="gray-icons graph"></i></span>
-						<h4 class="pull-left">Monthly visitors overview</h4>
-						<div id="reportrange" class="pull-right range-dropdown">
-							<i class="icon-calendar icon-large"></i><span></span><b class="caret"></b>
-						</div>
-					</div>
-					<div class="widget-container">
-						<div class="widget-block">
-							<div class=" row-fluid">
-								<div class="span8">
-									<div id="chart6">
-									</div>
-								</div>
-								<div class="span4">
-									<h3 class="h-overview">3458 People visited this site</h3>
-									<ul class="visit-overview">
-										<li class="clearfix">
-										<div class="chart-overview line-chart-overview">
-											 8,4,5,6,7,8,1,4,4,10,10,10,10,11,12,13,4,6,5,9,10
-										</div>
-										 Visits: 4,712</li>
-										<li>
-										<div class="chart-overview line-chart-overview">
-											 8,4,5,6,7,8,1,4,4,10,10,10,10,9,8,7,4,6,5,9,10
-										</div>
-										 Unique Visitors: 3,773 </li>
-										<li>
-										<div class="chart-overview line-chart-overview">
-											 20,19,18,17,16,15,1,4,4,10,10,10,10,9,8,7,4,6,5,9,10
-										</div>
-										 Pageviews: 14,343 </li>
-										<li>
-										<div class="chart-overview line-chart-overview">
-											 8,4,20,25,30,50,1,4,4,10,10,10,10,50,30,20,4,6,5,9,10
-										</div>
-										 Pages / Visit: 3.04 </li>
-										<li>
-										<div class="chart-overview line-chart-overview">
-											 8,4,20,30,40,1,4,4,10,10,10,10,8,10,12,4,6,5,9,10
-										</div>
-										 Avg. Visit Duration: 00:02:57 </li>
-										<li>
-										<div class="chart-overview line-chart-overview">
-											 8,4,10,8,7,6,1,4,4,10,10,10,10,20,19,18,4,6,5,9,10
-										</div>
-										 Bounce Rate: 23.09% </li>
-										<li>
-										<div class="chart-overview line-chart-overview">
-											 8,4,8,10,20,12,4,4,10,10,10,10,20,12,12,4,6,5,9,10
-										</div>
-										 % New Visits: 76.83% </li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-    <!-- dashboard container -->
-
-    <!-- recipe home screen -->
-    <div class="container-fluid recipes-screen">
-        <div class="row-fluid">
-            <div class="span8 recipes">
-            </div>
-        </div>
-    </div>
-    <!-- recipe home screen -->
-
-
-    <!-- edit recipe screen -->
-    <div class="container-fluid edit-recipe-screen">
-        <div class="row-fluid">
-            <div class="span12 form">
-            </div>
-        </div>
-    </div>
-    <!-- edit recipe screen -->
-
-</div>
-
-
-<!-- backbone templates -->
-
-<script type="text/template" id="recipe-templ">
-<div class="box-widget">
-    <div class="widget-head clearfix">
-        <span class="h-icon"><i class="gray-icons pencil"></i></span>
-        <h4 class="pull-left">{{= name }}</h4>
-        <div class="on_off pull-right">
-            <input type="checkbox" checked="checked" id="on_off_on"/>
-        </div>
-    </div>
-    <div class="widget-container">
-        <div class="widget-block">
-            
-        </div>
-    </div>
-</div>
-</script>
-
-<script type="text/template" id="edit-recipe-templ">
-<div class="box-widget">
-    <div class="widget-head clearfix">
-        <span class="h-icon"><i class="gray-icons list"></i></span>
-        <h4>{{= name }}</h4>
-        <div class="widget-action dropdown ">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="gray-icons cog_2"></i><b class="caret"></b></a>
-            <ul class="dropdown-menu pull-right">
-                <li><a href="#"><i class=" ledgray-icons add_co"></i> Add Row</a></li>
-                <li><a href="#"><i class="ledgray-icons disconnect_co"></i> Suspend</a></li>
-                <li><a href="#"><i class="ledgray-icons accept_co"></i> Approved</a></li>
-                <li><a href="#"><i class="ledgray-icons cross_co"></i> Delete</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="widget-container">
-        <div class="form-container">
-            <form class="form-well">
-                <div class="widget-well user-segment-form">
-                    <div class="widget-head clearfix">
-                        <h4><i class="ledgray-icons grid_dot_co"></i> Grid 9</h4>
-                    </div>
-                    <div class="widget-container">
-                        <div class="widget-block">
-                            <h5>Heading</h5>
-                            <p>
-                                Morbi in ligula dolor, ac faucibus odio. Maecenas vestibulum est sit amet lorem dapibus mattis. Pellentesque interdum egestas suscipit. Pellentesque sit amet ligula dui, id mollis turpis. Duis imperdiet egestas ipsum quis feugiat. Aliquam sagittis elementum mi ac viverra. Duis a nisi arcu.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="widget-well">
-                    <div class="widget-head clearfix">
-                        <h4><i class="ledgray-icons grid_dot_co"></i> Grid 9</h4>
-                    </div>
-                    <div class="widget-container">
-                        <div class="widget-block">
-                            <h5>Heading</h5>
-                            <p>
-                                Morbi in ligula dolor, ac faucibus odio. Maecenas vestibulum est sit amet lorem dapibus mattis. Pellentesque interdum egestas suscipit. Pellentesque sit amet ligula dui, id mollis turpis. Duis imperdiet egestas ipsum quis feugiat. Aliquam sagittis elementum mi ac viverra. Duis a nisi arcu.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-extend">Save changes</button>
-                    <button type="button" class="btn btn-danger">Cancel</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-</script>
-
-
-<script type="text/template" id="rule-templ">
-    {{ if(selector_id == 1){  }}
-        <ul class="main-selector elem-list pull-left">
-            <li>
-                <select related-attr="selector_id">
-                    <option value="1">Did event</option>
-                    <option value="2">Has attribute</option>
-                </select>
-            </li>
-            <li>
-                <select related-attr="event_id">
-                    <option value="0">Event</option>
-                    {{ for (var i = 0; i < events.length; i++) { }}
-                        <option value={{= events[i].id }} {{= event_id == events[i].id ? 'selected="selected"' : '' }}>
-                            {{= events[i].name }}
-                        </option>
-                    {{ } }}
-                </select>
-            </li>
-            {{ if(!(event_id == 0 || filters[0])){ }}
-                <li>
-                    <div class="expander">
-                        &gt;&gt;&gt;&gt;
-                    </div>
-                </li>
-            {{ } }}
-        </ul>
-
-        {{ var curationFilter = _.where(filters, {type : "curation"})[0]; }}
-        {{ var primaryFilter = _.where(filters, {type : "primary"})[0]; }}
-
-        {{ if(primaryFilter){ }}
-        <ul class="primary-filter elem-list pull-left">
-            <li>
-                <select related-attr="filter-selector">
-                    <option value="1">where</option>
-                    <option value="2">for</option>
-                </select>
-            </li>
-            <li>
-                <select related-attr="primary-operand-1">
-                    <option value="0">Property</option>
-                    {{ var properties = _.where(events, { id : event_id})[0].properties; }}
-
-                    {{ for (var i = 0; i < properties.length; i++) { }}
-                        <option value={{= properties[i] }} {{= primaryFilter.operands[0].value == properties[i] ? 'selected="selected"' : '' }}>
-                            {{= properties[i] }}
-                        </option>
-                    {{ } }}
-                </select>
-            </li>
-            <li class="operator">
-                <select related-attr="operator_id">
-                    {{ for (var i = 0; i < operators.length; i++) { }}
-                        <option value={{= operators[i].id }} {{= primaryFilter.operator_id == operators[i].id ? 'selected="selected"' : '' }}>
-                            {{= operators[i].name }}
-                        </option>
-                    {{ } }}
-                </select>
-            </li>
-            <li>
-                <input type="text" related-attr="primary-operand-2" class="input-mini" value={{= primaryFilter.operands[1].value }}>
-            </li>
-            {{ if(!curationFilter){ }}
-            <li>
-                <div class="expander">
-                    &gt;&gt;&gt;&gt;
-                </div>
-            </li>
-            {{ } }}
-        </ul>
-        {{ } }}
-
-        {{ if(curationFilter){ }}
-        <ul class="curation-filter elem-list pull-left">
-            <li>
-                <select related-attr="filter-selector">
-                    <option value="2">for</option>
-                    <option value="1">where</option>
-                </select>
-            </li>
-            <li>
-                <select related-attr="curation_operator_id">
-                {{ for (var i = 0; i < operators.length; i++) { }}
-                    <option value={{= operators[i].id }} {{= curationFilter.operator_id == operators[i].id ? 'selected="selected"' : '' }}>
-                        {{= operators[i].name }}
-                    </option>
-                {{ } }}
-                </select>
-            </li>
-            <li>
-                <input type="text" related-attr="curation-operand-1" class="input-mini" value={{= curationFilter.operands[0].value }}>
-            </li>
-            <li>
-                <select related-attr="curation-operand-1-type">
-                    <option value="false">times</option>
-                    <option value="true" {{= curationFilter.operands[0].is_percentage == "true" ? 'selected="selected"' : '' }}>% of times</option>
-                </select>
-            </li>
-        </ul>
-        {{ } }}
-
-        <div class="options pull-right">
-            x
-        </div>
-
-    {{ } else { }}
-    <!-- -------------------- attribute selector --------------------------------- --> 
-        <ul class="main-selector elem-list pull-left">
-            <li>
-                <select related-attr="selector_id">
-                    <option value="2">Has attribute</option>
-                    <option value="1">Did event</option>
-                </select>
-            </li>
-            <li>
-                <select related-attr="property_id">
-                    <option value="0">Attribute</option>
-                    {{ for (var i = 0; i < attributes.length; i++) { }}
-                        <option value={{= attributes[0].id }} {{= property_id == attributes[i].id ? 'selected="selected"' : '' }}>
-                            {{= attributes[i].name }}
-                        </option>
-                    {{ } }}
-                </select>
-            </li>
-            {{ if(!(property_id == 0 || filters[0])){ }}
-                <li>
-                    <div class="expander">
-                        &gt;&gt;&gt;&gt;
-                    </div>
-                </li>
-            {{ } }}
-        </ul>
-
-        {{ if(filters[0]){ }}
-        <ul class="primary-filter elem-list pull-left">
-            <li class="operator">
-                <select related-attr="operator_id">
-                    {{ for (var i = 0; i < operators.length; i++) { }}
-                        <option value={{= operators[i].id }} {{= filters[0].operator_id == operators[i] ? 'selected="selected"' : '' }}>
-                            {{= operators[i].name }}
-                        </option>
-                    {{ } }}
-                </select>
-            </li>
-            <li>
-                <input type="text" related-attr="primary-operand-1" class="input-mini" value={{= filters[0].operands[0].value }}>
-            </li>
-        </ul>
-        {{ } }}
-
-        <div class="options pull-right">
-            x
-        </div>
-    {{ } }}
-
-</script>
-
-<script type="text/template" id="rule-groups-templ">
-    <div>
-        <label>Group By</label>
-        <select class="group-by-main">
-            <option value="and">AND</option>
-            <option value="or" {{= operator == "or" ? 'selected="selected"' : '' }}>OR</option>
-        </select>
-    </div>
-    <div class="all-rule-groups">
-    </div>
-    <div class="add-rule-group">
-        +++
-    </div>
-</script>
-
-<script type="text/template" id="rule-group-templ">
-    <div>
-        <label>Group By</label>
-        <select class="group-by-secondary">
-            <option value="and">AND</option>
-            <option value="or" {{= operator == "or" ? 'selected="selected"' : '' }}>OR</option>
-        </select>
-    </div>
-    <div class="all-rules">
-    </div>
-    <div class="add-rule">
-        +++
-    </div>
-</script>
-
-<!-- backbone templates -->
-
-<%= javascript_include_tag "application" %>
-
-<script>
-    App.init();
 </script>
 </body>
 </html>

@@ -6,7 +6,8 @@ App.views.EditRecipe = Backbone.View.extend({
 
 
 	events : {
-		// bind events..
+		"click .btn-save"	: "save",
+		"click .btn-cancel"	: "cancel" 
 	},
 
 
@@ -15,7 +16,7 @@ App.views.EditRecipe = Backbone.View.extend({
 
 		// the one and only rule group
 		// collection
-		this.ruleGroups = new App.collections.RuleGroups();
+		// this.ruleGroups = new App.collections.RuleGroups();
 
 
 		// model that contains a collection
@@ -30,13 +31,22 @@ App.views.EditRecipe = Backbone.View.extend({
 
 		this.$el.html(this.template(this.model.toJSON()));
 		
-		this.ruleGroups.reset(this.model.get("segment").rules);
-		this.ruleGroups.defaults.operator = this.model.get("segment").operator;
+		// this.ruleGroups.reset(this.model.get("segment").rules);
+		// this.ruleGroups.defaults.operator = this.model.get("segment").operator;
 
-		var view = new App.views.RuleGroups({ collection : this.ruleGroups });
+		var view = new App.views.RuleGroups({ collection : this.model.ruleGroups });
 		this.$(".user-segment-form .widget-block").html(view.render().el);
 		
 		return this;
+	},
+
+	save : function(){
+		this.model.save();
+		App.currentRecipes.add(this.model);
+	},
+
+	cancel : function(){
+		App.currentRouter.navigate("#/recipes", {trigger : true});
 	}
 
 });

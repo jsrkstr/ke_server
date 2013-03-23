@@ -6,7 +6,7 @@ App.views.Recipes = Backbone.View.extend({
 
 
 	events : {
-		//bind events..
+		"click .btn-new-recipe" : "createNew"
 	},
 
 
@@ -31,6 +31,10 @@ App.views.Recipes = Backbone.View.extend({
 	addOne : function(model){
 		var view = new App.views.Recipe({model : model});
 		this.$el.append(view.render().el);
+	},
+
+	createNew : function(){
+		
 	}
 
 });
