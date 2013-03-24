@@ -2,6 +2,8 @@ App.views.Recipe = Backbone.View.extend({
 
 	template : _.template($("#recipe-templ").html()),
 
+	tagName : "div",
+	className : "recipe",
 
 	events : {
 		"click .h-icon"	: "editRecipe"
@@ -14,12 +16,20 @@ App.views.Recipe = Backbone.View.extend({
 
 
 	render : function(){
-		this.$el.html(this.template(this.model.toJSON()));
+		var json = this.model.toJSON();
+		
+		this.$el.html(this.template(json));
 		
 		setTimeout($.proxy(function() {
 			this.$('.on_off :checkbox').iphoneStyle();
     		this.$('.disabled :checkbox').iphoneStyle();
 		},this), 100);
+
+		if(json.trends){
+			var trendsChartData = new Backbone.Collection(json.trends);
+			var trendsView = new App.views.RecipeTrendsChart({collection : trendsChartData});
+			this.$(".widget-block").html(trendsView.render().el);
+		}
 
 		return this;
 	},

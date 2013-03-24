@@ -10,12 +10,12 @@ App.views.TrendsChart = Backbone.View.extend({
 
 
 	initialize : function(args){
-		this.model.on("reset",this.render, this);
+		this.model.on("change",this.render, this);
 	},
 
 
 	render : function(){
-		data = this.mode.toJSON();
+		data = this.model.toJSON();
 
 		var categories = data.series;
 		var all_series = [];
@@ -29,21 +29,24 @@ App.views.TrendsChart = Backbone.View.extend({
 			all_series.push(series);
 		}
 
+		setTimeout($.proxy(function() {
+			
+			this.chart = new Highcharts.Chart({
 
-		this.chart = new Highcharts.Chart({
+		        chart: {
+		            renderTo: this.el,
+		            type: 'line'
+		        },
+		        title: {
+		            text: 'Events Overview'
+		        },
+		        xAxis: {
+		            categories: categories
+		        },
+		        series: all_series
+		    });
 
-	        chart: {
-	            renderTo: this.el,
-	            type: 'line'
-	        },
-	        title: {
-	            text: 'Events Overview'
-	        },
-	        xAxis: {
-	            categories: categories,	        },
-	        },
-	        series: all_series,
-	    });
+	    },this), 100);
 
 		return this;
 	}

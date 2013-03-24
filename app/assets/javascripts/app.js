@@ -14,6 +14,7 @@ var App = {
 
     App.currentRecipes = new App.collections.Recipes();
     App.currentRecipesView = new App.views.Recipes({collection : App.currentRecipes});
+    App.currentRecipes.fetchOnce();
 
     App.currentRuleoptions = new App.models.RuleOptions();
 
@@ -53,6 +54,17 @@ var App = {
   // Removes the UI blocking element...
   hideSpinner : function() {
     $.unblockUI();
+  },
+
+  // convert 2012-12-05 to date object
+  dateFormat : function(str){
+    var split = str.split("-"); // yyyy-mm-dd
+    var date = new Date(0);
+    date.setDate(parseFloat(split[2]));
+    date.setMonth(parseFloat(split[1] - 1));
+    date.setYear(parseFloat(split[0]));
+
+    return date;
   }
 
 };
@@ -62,3 +74,10 @@ _.templateSettings = {
   interpolate: /\{\{\=(.+?)\}\}/g,
   evaluate: /\{\{(.+?)\}\}/g
 };
+
+_.sum = function(obj) {
+  if (!$.isArray(obj) || obj.length == 0) return 0;
+  return _.reduce(obj, function(sum, n) {
+    return sum += n;
+  });
+}

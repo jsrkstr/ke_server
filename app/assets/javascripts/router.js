@@ -12,13 +12,18 @@ App.routers.Router = Backbone.Router.extend({
   // Home Page 
   dashboard : function() {
     this.showScreen("dashboard");
+    if(!App.currentDasboardView){
+      App.currentDasboardView = new App.views.Dashboard();
+      App.currentDasboardView.render();
+    }
   },
 
 
   recipes : function(){
     this.showScreen("recipes");
 
-    App.currentRecipes.fetchOnce();
+    // App.currentRecipes.fetchOnce();
+    App.currentRecipesView.render();
   },
 
 

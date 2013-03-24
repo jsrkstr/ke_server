@@ -269,52 +269,7 @@
 					</div>
 					<div class="widget-container">
 						<div class="widget-block">
-							<div class=" row-fluid">
-								<div class="span8">
-									<div id="chart6">
-									</div>
-								</div>
-								<div class="span4">
-									<h3 class="h-overview">3458 People visited this site</h3>
-									<ul class="visit-overview">
-										<li class="clearfix">
-										<div class="chart-overview line-chart-overview">
-											 8,4,5,6,7,8,1,4,4,10,10,10,10,11,12,13,4,6,5,9,10
-										</div>
-										 Visits: 4,712</li>
-										<li>
-										<div class="chart-overview line-chart-overview">
-											 8,4,5,6,7,8,1,4,4,10,10,10,10,9,8,7,4,6,5,9,10
-										</div>
-										 Unique Visitors: 3,773 </li>
-										<li>
-										<div class="chart-overview line-chart-overview">
-											 20,19,18,17,16,15,1,4,4,10,10,10,10,9,8,7,4,6,5,9,10
-										</div>
-										 Pageviews: 14,343 </li>
-										<li>
-										<div class="chart-overview line-chart-overview">
-											 8,4,20,25,30,50,1,4,4,10,10,10,10,50,30,20,4,6,5,9,10
-										</div>
-										 Pages / Visit: 3.04 </li>
-										<li>
-										<div class="chart-overview line-chart-overview">
-											 8,4,20,30,40,1,4,4,10,10,10,10,8,10,12,4,6,5,9,10
-										</div>
-										 Avg. Visit Duration: 00:02:57 </li>
-										<li>
-										<div class="chart-overview line-chart-overview">
-											 8,4,10,8,7,6,1,4,4,10,10,10,10,20,19,18,4,6,5,9,10
-										</div>
-										 Bounce Rate: 23.09% </li>
-										<li>
-										<div class="chart-overview line-chart-overview">
-											 8,4,8,10,20,12,4,4,10,10,10,10,20,12,12,4,6,5,9,10
-										</div>
-										 % New Visits: 76.83% </li>
-									</ul>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -610,6 +565,31 @@
     </div>
 </script>
 
+<script type="text/template" id="dashboard-templ">
+	<div class="row-fluid">
+		<div class="span8">
+		</div>
+		<div class="span4">
+			<h3 class="h-overview">Yesterday Summary</h3>
+			<table class="visit-overview">
+				{{ for(var eventName in yesterdayTotals){ }}
+					<tr>
+						<td>{{= eventName }}</td><td>{{= yesterdayTotals[eventName] }}</td>
+					</tr>
+				{{ } }}
+			</table>
+			<h3 class="h-overview">Last 7 days Summary</h3>
+			<table class="visit-overview">
+				{{ for(var eventName in weekTotals){ }}
+					<tr>
+						<td>{{= eventName }}</td><td>{{= weekTotals[eventName] }}</td>
+					</tr>
+				{{ } }}
+			</table>
+		</div>
+	</div>
+</script>
+
 <!-- backbone templates -->
 
 <%= javascript_include_tag "application" %>
@@ -617,371 +597,6 @@
 <script>
     App.init();
 </script>
-<script>
-$(function () {
-    $.jqplot._noToImageButton = true;
-    var dailyVisits = [
-        ["2012-08-01", 400],
-        ["2012-08-02", 500],
-        ["2012-08-03", 600],
-        ["2012-08-04", 700],
-        ["2012-08-05", 800],
-        ["2012-08-06", 900],
-        ["2012-08-07", 1000],
-        ["2012-08-08", 1500],
-        ["2012-08-09", 1600],
-        ["2012-08-10", 1700],
-        ["2012-08-11", 1800],
-        ["2012-08-12", 3000],
-        ["2012-08-13", 2000],
-        ["2012-08-14", 1500],
-        ["2012-08-15", 1000],
-        ["2012-08-16", 900],
-        ["2012-08-17", 800],
-        ["2012-08-18", 700],
-        ["2012-08-19", 600],
-        ["2012-08-20", 500],
-        ["2012-08-21", 600],
-        ["2012-08-22", 700],
-        ["2012-08-23", 800],
-        ["2012-08-24", 900],
-        ["2012-08-25", 1000],
-        ["2012-08-26", 1100],
-        ["2012-08-27", 1300],
-        ["2012-08-28", 1400],
-        ["2012-08-29", 2000],
-        ["2012-08-30", 2500],
-        ["2012-08-31", 3000],
-        ["2012-09-01", 3500],
-        ["2012-09-02", 4000],
-        ["2012-09-03", 3500],
-        ["2012-09-04", 3000],
-        ["2012-09-06", 2000],
-        ["2012-09-07", 1500],
-        ["2012-09-08", 1000],
-        ["2012-09-09", 900],
-        ["2012-09-10", 800],
-        ["2012-09-11", 700],
-        ["2012-09-12", 600],
-        ["2012-09-13", 500],
-        ["2012-09-14", 400],
-        ["2012-09-15", 500],
-        ["2012-09-16", 600],
-        ["2012-09-17", 700],
-        ["2012-09-18", 800],
-        ["2012-09-19", 900],
-        ["2012-09-20", 1000],
-        ["2012-09-21", 1500],
-        ["2012-09-22", 2000],
-        ["2012-09-23", 2500],
-        ["2012-09-24", 3000],
-        ["2012-09-25", 3500],
-        ["2012-09-26", 4000],
-        ["2012-09-27", 4500],
-        ["2012-09-28", 5000],
-        ["2012-09-29", 6000],
-        ["2012-09-30", 6500],
-        ["2012-10-01", 7000],
-        ["2012-10-02", 8000],
-        ["2012-10-03", 9000],
-        ["2012-10-04", 10000]
-    ];
-    var uniqueVisits = [
-        ["2012-08-01", 200],
-        ["2012-08-02", 300],
-        ["2012-08-03", 400],
-        ["2012-08-04", 500],
-        ["2012-08-05", 600],
-        ["2012-08-06", 700],
-        ["2012-08-07", 800],
-        ["2012-08-08", 900],
-        ["2012-08-09", 1000],
-        ["2012-08-10", 1100],
-        ["2012-08-11", 1000],
-        ["2012-08-12", 900],
-        ["2012-08-13", 800],
-        ["2012-08-14", 700],
-        ["2012-08-15", 600],
-        ["2012-08-16", 500],
-        ["2012-08-17", 400],
-        ["2012-08-18", 300],
-        ["2012-08-19", 200],
-        ["2012-08-20", 300],
-        ["2012-08-21", 400],
-        ["2012-08-22", 500],
-        ["2012-08-23", 600],
-        ["2012-08-24", 700],
-        ["2012-08-25", 800],
-        ["2012-08-26", 900],
-        ["2012-08-27", 1000],
-        ["2012-08-28", 1100],
-        ["2012-08-29", 1200],
-        ["2012-08-30", 1100],
-        ["2012-08-31", 1000],
-        ["2012-09-01", 900],
-        ["2012-09-02", 800],
-        ["2012-09-03", 700],
-        ["2012-09-04", 600],
-        ["2012-09-06", 500],
-        ["2012-09-07", 400],
-        ["2012-09-08", 300],
-        ["2012-09-09", 200],
-        ["2012-09-10", 300],
-        ["2012-09-11", 400],
-        ["2012-09-12", 500],
-        ["2012-09-13", 600],
-        ["2012-09-14", 700],
-        ["2012-09-15", 800],
-        ["2012-09-16", 900],
-        ["2012-09-17", 1000],
-        ["2012-09-18", 1100],
-        ["2012-09-19", 1200],
-        ["2012-09-20", 1300],
-        ["2012-09-21", 1400],
-        ["2012-09-22", 1500],
-        ["2012-09-23", 1600],
-        ["2012-09-24", 1700],
-        ["2012-09-25", 1800],
-        ["2012-09-26", 1900],
-        ["2012-09-27", 2000],
-        ["2012-09-28", 2500],
-        ["2012-09-29", 2600],
-        ["2012-09-30", 2700],
-        ["2012-10-01", 2800],
-        ["2012-10-02", 3000],
-        ["2012-10-03", 3100],
-        ["2012-10-04", 3200]
-    ];
-    var newVisits = [
-        ["2012-08-01", 100],
-        ["2012-08-02", 200],
-        ["2012-08-03", 300],
-        ["2012-08-04", 400],
-        ["2012-08-05", 500],
-        ["2012-08-06", 600],
-        ["2012-08-07", 500],
-        ["2012-08-08", 400],
-        ["2012-08-09", 300],
-        ["2012-08-10", 200],
-        ["2012-08-11", 300],
-        ["2012-08-12", 400],
-        ["2012-08-13", 300],
-        ["2012-08-14", 200],
-        ["2012-08-15", 300],
-        ["2012-08-16", 400],
-        ["2012-08-17", 300],
-        ["2012-08-18", 200],
-        ["2012-08-19", 300],
-        ["2012-08-20", 400],
-        ["2012-08-21", 300],
-        ["2012-08-22", 200],
-        ["2012-08-23", 300],
-        ["2012-08-24", 400],
-        ["2012-08-25", 500],
-        ["2012-08-26", 600],
-        ["2012-08-27", 405],
-        ["2012-08-28", 367],
-        ["2012-08-29", 492],
-        ["2012-08-30", 200],
-        ["2012-08-31", 300],
-        ["2012-09-01", 400],
-        ["2012-09-02", 721],
-        ["2012-09-03", 649],
-        ["2012-09-04", 653],
-        ["2012-09-06", 900],
-        ["2012-09-07", 803],
-        ["2012-09-08", 851],
-        ["2012-09-09", 2059],
-        ["2012-09-10", 994],
-        ["2012-09-11", 742],
-        ["2012-09-12", 1340],
-        ["2012-09-13", 839],
-        ["2012-09-14", 1769],
-        ["2012-09-15", 1559],
-        ["2012-09-16", 2099],
-        ["2012-09-17", 1510],
-        ["2012-09-18", 1691],
-        ["2012-09-19", 1074],
-        ["2012-09-20", 1529],
-        ["2012-09-21", 1876],
-        ["2012-09-22", 1986],
-        ["2012-09-23", 1461],
-        ["2012-09-24", 1460],
-        ["2012-09-25", 1392],
-        ["2012-09-26", 2164],
-        ["2012-09-27", 1746],
-        ["2012-09-28", 2220],
-        ["2012-09-29", 2617],
-        ["2012-09-30", 3236],
-        ["2012-10-01", 1746],
-        ["2012-10-02", 2220],
-        ["2012-10-03", 4000],
-        ["2012-10-04", 5000]
-    ];
-    var plot1 = $.jqplot("chart6", [dailyVisits, uniqueVisits, newVisits], {
-        seriesColors: ["#edc240", "#58a60c", "#0077bc"],
-        title: {
-            text: 'Visitors Overview',
-            textColor: "rgb(102, 102, 102)",
-            fontFamily: "Arial,Helvetica,sans-serif",
-            fontSize: "16px",
-            textAlign: "center",
-        },
-        highlighter: {
-            show: true,
-            sizeAdjust: 1,
-            tooltipOffset: 9
-        },
-        grid: {
-            background: '#fff',
-            drawBorder: false,
-            drawGridLines: true,
-            shadow: false,
-            gridLineColor: '#eee',
-            gridLineWidth: 1,
-            borderWidth: .5,
-            borderColor: '#999999',
-        },
-        legend: {
-            show: true,
-            location: 'se',
-            // compass direction, nw, n, ne, e, se, s, sw, w.
-            xoffset: 12,
-            // pixel offset of the legend box from the x (or x2) axis.
-            yoffset: 12,
-            // pixel offset of the legend box from the y (or y2) axis.
-        },
-        seriesDefaults: {
-            shadow: false,
-            // show shadow or not.
-            rendererOptions: {
-                smooth: false,
-                animation: {
-                    show: true,
-                    speed: 2500
-                }
-            },
-            markerOptions: {
-                show: true,
-                // wether to show data point markers.
-                style: 'filledCircle',
-                // circle, diamond, square, filledCircle.
-                // filledDiamond or filledSquare.
-                lineWidth: 1,
-                // width of the stroke drawing the marker.
-                size: 10,
-                // size (diameter, edge length, etc.) of the marker.
-                color: '#eb8439',
-                // color of marker, set to color of line by default.
-                shadow: false,
-                // wether to draw shadow on marker or not.
-            }
-        },
-        series: [{
-            lineWidth: 3,
-            fill: true,
-            label: 'Visits',
-            fillAndStroke: true,
-            fillColor: '#f7eaca',
-            fillAlpha: 0.5,
-            markerOptions: {
-                show: true,
-                // wether to show data point markers.
-                style: 'filledCircle',
-                // circle, diamond, square, filledCircle.
-                // filledDiamond or filledSquare.
-                lineWidth: 1,
-                // width of the stroke drawing the marker.
-                size: 8,
-                // size (diameter, edge length, etc.) of the marker.
-                color: '#eb8439',
-                // color of marker, set to color of line by default.
-                shadow: false,
-                // wether to draw shadow on marker or not.
-            }
-        }, {
-            lineWidth: 2,
-            fill: true,
-            label: 'Unique Visits',
-            fillAndStroke: true,
-            fillColor: '#b2ebac',
-            fillAlpha: 0.3,
-            markerOptions: {
-                show: true,
-                // wether to show data point markers.
-                style: 'filledCircle',
-                // circle, diamond, square, filledCircle.
-                // filledDiamond or filledSquare.
-                lineWidth: 1,
-                // width of the stroke drawing the marker.
-                size: 7,
-                // size (diameter, edge length, etc.) of the marker.
-                color: '#2d8800',
-                // color of marker, set to color of line by default.
-                shadow: false,
-                // wether to draw shadow on marker or not.
-            }
-        }, {
-            lineWidth: 1,
-            fill: true,
-            label: 'New Visits',
-            fillAndStroke: true,
-            fillColor: '#1774a9',
-            fillAlpha: 0.1,
-            markerOptions: {
-                show: true,
-                // wether to show data point markers.
-                style: 'filledCircle',
-                // circle, diamond, square, filledCircle.
-                // filledDiamond or filledSquare.
-                lineWidth: 1,
-                // width of the stroke drawing the marker.
-                size: 6,
-                // size (diameter, edge length, etc.) of the marker.
-                color: '#2e7197',
-                // color of marker, set to color of line by default.
-                shadow: false,
-                // wether to draw shadow on marker or not.
-            }
-        }],
-        axesDefaults: {
-            rendererOptions: {
-                baselineWidth: 1.5,
-                baselineColor: '#444444',
-                drawBaseline: false
-            }
-        },
-        axes: {
-            xaxis: {
-                renderer: $.jqplot.DateAxisRenderer,
-                tickRenderer: $.jqplot.CanvasAxisTickRenderer,
-                tickOptions: {
-                    formatString: "%b %e",
-                    text: 'Visitors Overview',
-                    textColor: "rgb(102, 102, 102)",
-                    fontFamily: "Arial,Helvetica,sans-serif",
-                    fontSize: "11px",
-                    textAlign: "center"
-                },
-                min: "2012-08-01",
-                max: "2012-08-15",
-                tickInterval: "7 days",
-                drawMajorGridlines: false
-            },
-            yaxis: {
-                renderer: $.jqplot.LogAxisRenderer,
-                pad: 0,
-                rendererOptions: {
-                    minorTicks: 1
-                },
-                tickOptions: {
-                    formatString: "%'d",
-                    showMark: false
-                }
-            }
-        }
-    });
-});
-</script>
+
 </body>
 </html>

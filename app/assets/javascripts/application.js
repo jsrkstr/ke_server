@@ -16,6 +16,8 @@
 //= require pontus/js/jquery
 //= require vendor/underscore
 //= require vendor/backbone
+//= require vendor/highcharts
+//= require vendor/date_format
 //= require pontus/js/bootstrap.min
 //= require pontus/js/jquery-ui-1.8.16.custom.min
 //= require pontus/js/jquery.data-table
@@ -75,8 +77,12 @@
 //= require models/rule_group
 //= require models/rule
 //= require models/rule_options
+//= require models/trends_chart
 //= require collections/recipes
 //= require collections/rule_groups
+//= require views/dashboard
+//= require views/trends_chart_view
+//= require views/recipe_trends_chart_view
 //= require views/recipe
 //= require views/recipes
 //= require views/edit_recipe
