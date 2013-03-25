@@ -68,3 +68,21 @@ App.views.RecipeTrendsChart = Backbone.View.extend({
 
 });
 	
+
+// code for comparision chart not funnel
+
+// actionTrends = this.collection.toJSON();
+
+// var categories = ["Sent", "Delivered", "Ignored", "Opened"];
+
+// var all_series = [];
+
+// for (var i = 0; i < actionTrends.length; i++) {
+
+// 	var series = {
+// 		name : "Action " + (i + 1),
+// 		data : [actionTrends[i].values["sent"][0], actionTrends[i].values["delivered"][0], actionTrends[i].values["ignored"][0], actionTrends[i].values["opened"][0] ]
+// 	};
+
+// 	all_series.push(series);
+// }

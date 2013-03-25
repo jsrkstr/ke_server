@@ -17,6 +17,18 @@ App.views.Recipe = Backbone.View.extend({
 
 	render : function(){
 		var json = this.model.toJSON();
+
+		var totals = {};
+
+		for(var eventName in json.trends[0].values){
+			totals[eventName] = _.sum(_.map(json.trends, function(actionTrends){
+				return actionTrends.values[eventName][0];
+			}));
+		}
+
+		_.extend(json, {
+			totals : totals
+		});
 		
 		this.$el.html(this.template(json));
 		
@@ -28,7 +40,7 @@ App.views.Recipe = Backbone.View.extend({
 		if(json.trends){
 			var trendsChartData = new Backbone.Collection(json.trends);
 			var trendsView = new App.views.RecipeTrendsChart({collection : trendsChartData});
-			this.$(".widget-block").html(trendsView.render().el);
+			this.$(".widget-block .span9").html(trendsView.render().el);
 		}
 
 		return this;

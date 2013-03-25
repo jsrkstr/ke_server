@@ -315,9 +315,21 @@
         </div>
     </div>
     <div class="widget-container">
-        <div class="widget-block">
-            
-        </div>
+		<div class="widget-block">
+			<div class="row-fluid">
+				<div class="span9"></div>
+				<div class="span3">
+					<h3 class="h-overview">Summary</h3>
+					<table class="visit-overview">
+						{{ for(var eventName in totals){ }}
+							<tr>
+								<td>{{= eventName }}</td><td>{{= totals[eventName] }}</td>
+							</tr>
+						{{ } }}
+					</table>
+				</div>
+			</div>
+		</div>
     </div>
 </div>
 </script>
